@@ -1,0 +1,191 @@
+[
+  {
+    "estado": "Acre",
+    "potencia_instalada_MW": 7570,
+    "potencial_eolico_GW": 23.1,
+    "fator_capacidade_percentual": 43.1,
+    "parques_eolicos": 211
+  },
+  {
+    "estado": "Alagoas",
+    "potencia_instalada_MW": 538,
+    "potencial_eolico_GW": 7.9,
+    "fator_capacidade_percentual": 26.0,
+    "parques_eolicos": 167
+  },
+  {
+    "estado": "Amapá",
+    "potencia_instalada_MW": 5764,
+    "potencial_eolico_GW": 21.2,
+    "fator_capacidade_percentual": 40.2,
+    "parques_eolicos": 133
+  },
+  {
+    "estado": "Amazonas",
+    "potencia_instalada_MW": 3199,
+    "potencial_eolico_GW": 25.0,
+    "fator_capacidade_percentual": 33.1,
+    "parques_eolicos": 75
+  },
+  {
+    "estado": "Bahia",
+    "potencia_instalada_MW": 7773,
+    "potencial_eolico_GW": 1.5,
+    "fator_capacidade_percentual": 30.0,
+    "parques_eolicos": 238
+  },
+  {
+    "estado": "Ceará",
+    "potencia_instalada_MW": 7122,
+    "potencial_eolico_GW": 18.1,
+    "fator_capacidade_percentual": 37.3,
+    "parques_eolicos": 96
+  },
+  {
+    "estado": "Distrito Federal",
+    "potencia_instalada_MW": 6787,
+    "potencial_eolico_GW": 10.7,
+    "fator_capacidade_percentual": 40.6,
+    "parques_eolicos": 43
+  },
+  {
+    "estado": "Espírito Santo",
+    "potencia_instalada_MW": 6678,
+    "potencial_eolico_GW": 11.1,
+    "fator_capacidade_percentual": 54.7,
+    "parques_eolicos": 210
+  },
+  {
+    "estado": "Goiás",
+    "potencia_instalada_MW": 4816,
+    "potencial_eolico_GW": 27.9,
+    "fator_capacidade_percentual": 39.2,
+    "parques_eolicos": 136
+  },
+  {
+    "estado": "Maranhão",
+    "potencia_instalada_MW": 6954,
+    "potencial_eolico_GW": 29.3,
+    "fator_capacidade_percentual": 38.7,
+    "parques_eolicos": 92
+  },
+  {
+    "estado": "Mato Grosso",
+    "potencia_instalada_MW": 6214,
+    "potencial_eolico_GW": 21.2,
+    "fator_capacidade_percentual": 46.8,
+    "parques_eolicos": 145
+  },
+  {
+    "estado": "Mato Grosso do Sul",
+    "potencia_instalada_MW": 5715,
+    "potencial_eolico_GW": 3.3,
+    "fator_capacidade_percentual": 50.4,
+    "parques_eolicos": 72
+  },
+  {
+    "estado": "Minas Gerais",
+    "potencia_instalada_MW": 1676,
+    "potencial_eolico_GW": 29.1,
+    "fator_capacidade_percentual": 39.6,
+    "parques_eolicos": 208
+  },
+  {
+    "estado": "Pará",
+    "potencia_instalada_MW": 6138,
+    "potencial_eolico_GW": 29.7,
+    "fator_capacidade_percentual": 40.9,
+    "parques_eolicos": 41
+  },
+  {
+    "estado": "Paraíba",
+    "potencia_instalada_MW": 7255,
+    "potencial_eolico_GW": 14.9,
+    "fator_capacidade_percentual": 41.1,
+    "parques_eolicos": 128
+  },
+  {
+    "estado": "Paraná",
+    "potencia_instalada_MW": 2231,
+    "potencial_eolico_GW": 9.3,
+    "fator_capacidade_percentual": 29.8,
+    "parques_eolicos": 176
+  },
+  {
+    "estado": "Pernambuco",
+    "potencia_instalada_MW": 4309,
+    "potencial_eolico_GW": 6.1,
+    "fator_capacidade_percentual": 39.6,
+    "parques_eolicos": 55
+  },
+  {
+    "estado": "Piauí",
+    "potencia_instalada_MW": 6574,
+    "potencial_eolico_GW": 14.0,
+    "fator_capacidade_percentual": 50.1,
+    "parques_eolicos": 224
+  },
+  {
+    "estado": "Rio de Janeiro",
+    "potencia_instalada_MW": 1699,
+    "potencial_eolico_GW": 28.1,
+    "fator_capacidade_percentual": 26.5,
+    "parques_eolicos": 197
+  },
+  {
+    "estado": "Rio Grande do Norte",
+    "potencia_instalada_MW": 507,
+    "potencial_eolico_GW": 13.0,
+    "fator_capacidade_percentual": 34.1,
+    "parques_eolicos": 151
+  },
+  {
+    "estado": "Rio Grande do Sul",
+    "potencia_instalada_MW": 83,
+    "potencial_eolico_GW": 24.4,
+    "fator_capacidade_percentual": 50.3,
+    "parques_eolicos": 157
+  },
+  {
+    "estado": "Rondônia",
+    "potencia_instalada_MW": 7505,
+    "potencial_eolico_GW": 24.6,
+    "fator_capacidade_percentual": 36.3,
+    "parques_eolicos": 14
+  },
+  {
+    "estado": "Roraima",
+    "potencia_instalada_MW": 7356,
+    "potencial_eolico_GW": 15.2,
+    "fator_capacidade_percentual": 25.7,
+    "parques_eolicos": 153
+  },
+  {
+    "estado": "Santa Catarina",
+    "potencia_instalada_MW": 3821,
+    "potencial_eolico_GW": 9.5,
+    "fator_capacidade_percentual": 50.9,
+    "parques_eolicos": 236
+  },
+  {
+    "estado": "São Paulo",
+    "potencia_instalada_MW": 1705,
+    "potencial_eolico_GW": 18.0,
+    "fator_capacidade_percentual": 42.2,
+    "parques_eolicos": 110
+  },
+  {
+    "estado": "Sergipe",
+    "potencia_instalada_MW": 6947,
+    "potencial_eolico_GW": 13.5,
+    "fator_capacidade_percentual": 48.1,
+    "parques_eolicos": 211
+  },
+  {
+    "estado": "Tocantins",
+    "potencia_instalada_MW": 353,
+    "potencial_eolico_GW": 17.6,
+    "fator_capacidade_percentual": 30.0,
+    "parques_eolicos": 70
+  }
+]

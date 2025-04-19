@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Energia Eólica por Estado</title>
+  <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css" />
+  <link rel="stylesheet" href="./static/index.css" />
+  <link rel="stylesheet" href="./static/header.css" />
+  <link rel="icon" href="../static/img/logo.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <i class="bi bi-list menu-mobile"></i>
+  <header id="header">
+    <section class="profile">
+      <img src="../static/img/logo.png" alt="Logo Energia Renovável" />
+      <div class="profile-text">
+        <h2>Econova</h2>
+      </div>
+
+      <nav class="nav-menu">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/"><i class="bi bi-house"></i> Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#transicao2"><i class="bi bi-person"></i> Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#transicao3"><i class="bi bi-envelope"></i> Contato</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/consumo"><i class="bi bi-lightning-fill"></i> Consumo de Energia Geral</a>
+          </li>
+
+          <!-- Dropdown de Fontes de Energia -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownFontes" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <i class="bi bi-bar-chart"></i> Fontes de Energia
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownFontes">
+              <li><a class="dropdown-item" href="/energia_solar"><i class="bi bi-brightness-high"></i> Energia Solar</a>
+              </li>
+              <li><a class="dropdown-item" href="/energia_eolica"><i class="bi bi-wind"></i> Energia Eólica</a></li>
+              <li><a class="dropdown-item" href="/energia_hidreletrica"><i class="bi bi-droplet-half"></i> Energia
+                  Hidrelétrica</a></li>
+              <li><a class="dropdown-item" href="/energia_biomassa"><i class="bi bi-fire"></i> Energia Biomassa</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </section>
+
+    {% if username %}
+    <div class="dropdown">
+      <button class="dropbtn" onclick="toggleDropdown()">
+        Bem vindo, {{ username }}!
+      </button>
+      <div class="dropdown-content" id="myDropdown">
+        <a href="/minha_conta">Minha Conta</a>
+        <a href="#" onclick="confirmLogout()">Logout</a>
+      </div>
+    </div>
+    {% else %}
+    <nav class="nav-menu">
+      <ul class="nav">
+        <li class="nav-item">
+          <div class="login-button">
+            <a href="/registro" class="btn-register btn-log-reg">Registrar</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <div class="login-button">
+            <a href="/login" class="btn-login btn-log-reg">Login</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    {% endif %}
+  </header>
+
+  <br><br><br><br>
+
+  <main id="main" class="container mt-5">
+    <section id="pesquisa">
+      <h2 class="text-center mb-4">Energia Eólica por Estado</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <label for="estadoEolico" class="form-label">Escolha um estado:</label>
+          <select id="estadoEolico" class="form-select">
+            <option selected disabled>Selecione o estado</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="dadosEolico" class="row justify-content-center text-center d-none">
+        <div class="col-md-6">
+          <div class="card mt-4">
+            <div class="card-body">
+              <h5 class="card-title" id="tituloEstado"></h5>
+              <p class="card-text" id="potencia"></p>
+              <p class="card-text" id="potencial"></p>
+              <p class="card-text" id="fator"></p>
+              <p class="card-text" id="parques"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 mt-3">
+          <div class="alert alert-secondary" role="alert">
+            <strong>Legenda:</strong><br>
+            <strong>Potência Instalada (MW):</strong> Quantidade total de megawatts que os parques eólicos instalados
+            podem produzir.<br>
+            <strong>Potencial Eólico (GW):</strong> Estimativa do quanto o estado poderia gerar em gigawatts com seu
+            potencial natural de vento.<br>
+            <strong>Fator de Capacidade (%):</strong> Eficiência média da produção eólica comparada ao seu potencial
+            máximo.<br>
+            <strong>Parques Eólicos:</strong> Número de instalações ativas de geração de energia eólica no estado.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <br>
+    <section id="dashboard" class="mt-5">
+      <h3 class="text-center mb-4">Painel Comparativo Geral</h3>
+      <div class="row">
+        <div class="col-md-6">
+          <canvas id="graficoPotencia"></canvas>
+        </div>
+        <div class="col-md-6">
+          <canvas id="graficoFator"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <br><br><br>
+
+    <figure style="text-align: center; margin-bottom: 2rem;">
+      <img src="../static/img/eolica_foto.jpg" alt="Imagem Eólica"
+        style="max-width: 70%; width: 400px; height: auto; border-radius: 8px;">
+      <figcaption style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
+        Fonte: <a href="https://ecoa.org.br/energia-eolica/" target="_blank" rel="noopener noreferrer">ecoa.org.br</a>
+      </figcaption>
+    </figure>
+
+    <section id="historia-eolica" class="mt-5">
+      <h3 class="text-center mb-4">Sobre a Energia Eólica</h3>
+
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <h4>Origens e Evolução Global</h4>
+          <p>
+            A utilização da energia eólica remonta a mais de 3.000 anos, quando civilizações antigas empregavam a força
+            dos ventos para moer grãos, bombear água e impulsionar embarcações a vela. Na antiga Pérsia, por volta do
+            século VII, surgiram os primeiros moinhos de vento com eixo vertical, utilizados para tarefas como moagem de
+            grãos e bombeamento de água. Na Europa medieval, especialmente na Inglaterra e na Holanda, os moinhos de
+            vento tornaram-se comuns para diversas aplicações agrícolas e industriais.
+          </p>
+          <p>
+            A transição da energia eólica para a geração de eletricidade ocorreu no final do século XIX. Em 1887, na
+            Escócia, o professor James Blyth construiu o primeiro moinho de vento para gerar eletricidade, alimentando
+            sua residência. Desde então, a tecnologia evoluiu significativamente, com o desenvolvimento de turbinas
+            modernas e a expansão de parques eólicos em todo o mundo.
+          </p>
+          <p>
+            <strong>Fonte:</strong> <a
+              href="https://www.iberdrola.com/quem-somos/nossa-atividade/energia-eolica-onshore/historia"
+              target="_blank">Iberdrola</a>
+          </p>
+
+          <br>
+          <h4>Energia Eólica no Brasil</h4>
+          <p>
+            No Brasil, a primeira turbina eólica foi instalada em 1992, em Fernando de Noronha (PE), marcando o início
+            da exploração da energia eólica no país. A partir de 2005, com o Programa de Incentivo às Fontes
+            Alternativas de Energia Elétrica (Proinfa), houve um impulso significativo no setor. Em 2021, o Brasil
+            alcançou a 7ª posição mundial em capacidade instalada de energia eólica, com 21 GW, e a 4ª posição em
+            produção, com 72 TWh.
+          </p>
+          <p>
+            Atualmente, a energia eólica representa uma parcela significativa da matriz energética brasileira, com
+            destaque para os estados do Rio Grande do Norte, Bahia e Ceará, que concentram a maior parte dos parques
+            eólicos do país.
+          </p>
+          <p>
+            <strong>Fonte:</strong> <a href="https://pt.wikipedia.org/wiki/Energia_e%C3%B3lica_no_Brasil"
+              target="_blank">Wikipédia</a>
+          </p>
+        </div>
+      </div>
+    </section>
+    <br>
+
+  </main>
+
+  <footer id="footer">
+    <div class="container-footer text-center mt-5">
+      &copy; Copyright <strong>Econova</strong>
+    </div>
+  </footer>
+
+  <script>
+    let eolicaData = [];
+
+    fetch('../static/data/energia_eolica_estados.json')
+      .then(response => response.json())
+      .then(data => {
+        eolicaData = data;
+        const select = document.getElementById('estadoEolico');
+        data.forEach(item => {
+          const opt = document.createElement('option');
+          opt.value = item.estado;
+          opt.textContent = item.estado;
+          select.appendChild(opt);
+        });
+
+        const estados = data.map(d => d.estado);
+        const potencias = data.map(d => d.potencia_instalada_MW);
+        const fatores = data.map(d => d.fator_capacidade_percentual);
+
+        new Chart(document.getElementById('graficoPotencia'), {
+          type: 'bar',
+          data: {
+            labels: estados,
+            datasets: [{
+              label: 'Potência Instalada (MW)',
+              data: potencias,
+              backgroundColor: 'rgba(54, 162, 235, 0.6)'
+            }]
+          },
+          options: {
+            responsive: true,
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+
+        new Chart(document.getElementById('graficoFator'), {
+          type: 'line',
+          data: {
+            labels: estados,
+            datasets: [{
+              label: 'Fator de Capacidade (%)',
+              data: fatores,
+              borderColor: 'rgba(255, 206, 86, 1)',
+              fill: false
+            }]
+          },
+          options: {
+            responsive: true,
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      });
+
+    document.getElementById('estadoEolico').addEventListener('change', function () {
+      const estadoSelecionado = this.value;
+      const info = eolicaData.find(e => e.estado === estadoSelecionado);
+
+      if (info) {
+        document.getElementById('dadosEolico').classList.remove('d-none');
+        document.getElementById('tituloEstado').textContent = info.estado;
+        document.getElementById('potencia').textContent = `Potência Instalada: ${info.potencia_instalada_MW} MW`;
+        document.getElementById('potencial').textContent = `Potencial Eólico: ${info.potencial_eolico_GW} GW`;
+        document.getElementById('fator').textContent = `Fator de Capacidade: ${info.fator_capacidade_percentual}%`;
+        document.getElementById('parques').textContent = `Número de Parques Eólicos: ${info.parques_eolicos}`;
+      }
+    });
+  </script>
+
+  <script src="../static/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/script.js"></script>
+</body>
+
+</html>

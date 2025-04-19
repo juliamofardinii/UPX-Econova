@@ -1,0 +1,411 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #0d3586;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+#inicio {
+  height: 100vh;
+  background: linear-gradient(to top, #85bbbb, #459e9d, #1A7574, #144e4d);
+  /* Gradiente de cores */
+  display: flex;
+  align-items: center;
+}
+
+.inicio-content {
+  text-align: center;
+  color: #fff;
+}
+
+.inicio-content h2 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+.inicio-content p {
+  font-size: 1.5rem;
+  margin-bottom: 70px;
+}
+
+.card {
+  background: #1a7574ff;
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 16px;
+}
+
+.cards {
+  margin-bottom: 40px;
+  overflow: hidden;
+  /* Adicionado */
+}
+
+.card-1 {
+  border-radius: 30px;
+}
+
+.carousel-inner .carousel-item img {
+  max-width: 25%;
+  max-height: 300px;
+  width: auto;
+}
+
+.carousel-inner {
+  height: 20em;
+}
+
+.btn-register {
+  margin-right: 20px;
+}
+
+.ver-modelo {
+  border-radius: 25px 25px 25px 25px;
+}
+
+.divisao {
+  height: 20px;
+}
+
+#sobre {
+  padding-top: 1%;
+}
+
+#modelos {
+  padding-top: 3%;
+}
+
+#transicao1, #transicao2, #transicao3 {
+  height: 30px;
+  background-color: #cee4ec;
+  transition: height 0.3s ease;
+}
+
+#transicao1, #transicao2, #transicao3 {
+  border-bottom: 1px solid #cee4ec;
+}
+
+.botao_modelos {
+  margin-top: 20px;
+}
+
+.btn1 {
+  height: 100px;
+  width: 300px;
+  font-size: 25px;
+  margin-top: 30px;
+}
+
+#message-alert {
+  margin-top: 90px;
+}
+
+section#inicio {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+}
+
+section#inicio h2 {
+  font-size: 3.7rem;
+}
+
+section#inicio span#subtitle {
+  font-size: 1.5rem;
+}
+
+.text-shadow {
+  text-shadow: 4px 4px 10px #000;
+}
+
+section#inicio div#arraste {
+  width: 9rem;
+}
+
+section#inicio div#arraste a {
+  text-decoration: none;
+  color: #fff;
+}
+
+i.menu-mobile {
+  position: fixed;
+  color: #fff;
+  background-color: #0f4363;
+  right: 1rem;
+  top: 1rem;
+  font-size: 1.5rem;
+  border-radius: 4rem;
+  cursor: pointer;
+  z-index: 10;
+  width: 45px;
+  height: 45px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-nav-active {
+  overflow: hidden;
+}
+
+.menu-nav-active #header {
+  left: 0;
+}
+
+.mapa {
+  width: 100%;
+}
+
+.username {
+  margin-right: 5px;
+  color: #fff;
+}
+
+.inicio-conta-content {
+  text-align: center;
+  color: #fff;
+}
+
+.inicio-conta-content h2 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+.inicio-conta-content p {
+  font-size: 1.5rem;
+  margin-bottom: 70px;
+}
+
+section#inicio-conta {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+}
+
+section#inicio-conta h2 {
+  font-size: 3.7rem;
+}
+
+section#inicio-conta span#subtitle {
+  font-size: 1.5rem;
+}
+
+section#inicio-conta div#arraste {
+  width: 9rem;
+}
+
+section#inicio-conta div#arraste a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.section-bg {
+  background-color: #ebebf5;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  width: 12px;
+  box-shadow: inset 0 0 .3rem #00000050;
+  background-color: #fff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #144e4d;
+}
+
+@media (max-width: 1460px) {
+  .carousel-control-prev {
+    margin-left: 0;
+  }
+
+  .carousel-control-next {
+    margin-right: 0;
+  }
+}
+
+/* Animação */
+
+[data-anime] {
+  opacity: 0;
+  transition: 1s;
+}
+
+[data-anime="down"] {
+  transform: translate3d(0, 20%, 0);
+}
+
+[data-anime="up"] {
+  transform: translate3d(0, 20%, 0);
+}
+
+[data-anime="left"] {
+  transform: translate3d(0, 0, 0);
+}
+
+[data-anime="right"] {
+  transform: translate3d(0, 0, 0);
+}
+
+[data-anime].animate {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+#btn-loading {
+  display: none;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+#btn-enviar {
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px 30px 30px 30px;
+  color: black;
+}
+
+#btn-enviar::hover {
+  background-color: rgb(169, 210, 210);
+}
+
+
+#message-alert {
+  position: fixed;
+  z-index: 10;
+  top: 30px;
+  right: 30px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container-footer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+/* Estilo para o footer */
+#footer {
+  background-color: #144e4d;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: auto;
+}
+
+@media (max-width: 900px) {
+  #footer {
+    position: static;
+    width: auto;
+    padding: 20px 15px;
+  }
+
+  .card-espaco {
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+  }
+}
+
+.btn-saiba-mais {
+  line-height: 1;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: .75rem;
+  background-color: rgb(2, 62, 62);
+  color: #fff;
+  border-radius: 10rem;
+  font-weight: 600;
+  padding: .75rem 1.5rem;
+  padding-left: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color .3s;
+}
+
+.btn-saiba-mais__icon-wrapper {
+  flex-shrink: 0;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  color: var(--clr);
+  background-color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.btn-saiba-mais:hover {
+  background-color: rgb(1, 50, 50);
+}
+
+.btn-saiba-mais:hover .btn-saiba-mais__icon-wrapper {
+  color: #1c0e39;
+}
+
+.btn-saiba-mais__icon-svg--copy {
+  position: absolute;
+  transform: translate(-150%, 150%);
+}
+
+.btn-saiba-mais:hover .btn-saiba-mais__icon-svg:first-child {
+  transition: transform .3s ease-in-out;
+  transform: translate(150%, -150%);
+}
+
+.btn-saiba-mais:hover .btn-saiba-mais__icon-svg--copy {
+  transition: transform .3s ease-in-out .1s;
+  transform: translate(0);
+}
+
+

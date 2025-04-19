@@ -1,0 +1,191 @@
+[
+  {
+    "estado": "Acre",
+    "potencia_instalada_MW": 17215,
+    "usinas_hidreletricas": 95,
+    "capacidade_total_GWh": 28015.81,
+    "aproveitamento_percentual": 66.5
+  },
+  {
+    "estado": "Alagoas",
+    "potencia_instalada_MW": 4979,
+    "usinas_hidreletricas": 71,
+    "capacidade_total_GWh": 7380.28,
+    "aproveitamento_percentual": 50.7
+  },
+  {
+    "estado": "Amapá",
+    "potencia_instalada_MW": 9132,
+    "usinas_hidreletricas": 52,
+    "capacidade_total_GWh": 25095.92,
+    "aproveitamento_percentual": 62.0
+  },
+  {
+    "estado": "Amazonas",
+    "potencia_instalada_MW": 18921,
+    "usinas_hidreletricas": 93,
+    "capacidade_total_GWh": 10622.48,
+    "aproveitamento_percentual": 68.2
+  },
+  {
+    "estado": "Bahia",
+    "potencia_instalada_MW": 6367,
+    "usinas_hidreletricas": 53,
+    "capacidade_total_GWh": 21269.39,
+    "aproveitamento_percentual": 80.7
+  },
+  {
+    "estado": "Ceará",
+    "potencia_instalada_MW": 17534,
+    "usinas_hidreletricas": 56,
+    "capacidade_total_GWh": 23114.55,
+    "aproveitamento_percentual": 30.1
+  },
+  {
+    "estado": "Distrito Federal",
+    "potencia_instalada_MW": 8660,
+    "usinas_hidreletricas": 80,
+    "capacidade_total_GWh": 18999.75,
+    "aproveitamento_percentual": 42.9
+  },
+  {
+    "estado": "Espírito Santo",
+    "potencia_instalada_MW": 10730,
+    "usinas_hidreletricas": 30,
+    "capacidade_total_GWh": 2057.1,
+    "aproveitamento_percentual": 75.9
+  },
+  {
+    "estado": "Goiás",
+    "potencia_instalada_MW": 16748,
+    "usinas_hidreletricas": 41,
+    "capacidade_total_GWh": 5675.68,
+    "aproveitamento_percentual": 57.6
+  },
+  {
+    "estado": "Maranhão",
+    "potencia_instalada_MW": 16269,
+    "usinas_hidreletricas": 38,
+    "capacidade_total_GWh": 26435.8,
+    "aproveitamento_percentual": 54.8
+  },
+  {
+    "estado": "Mato Grosso",
+    "potencia_instalada_MW": 10330,
+    "usinas_hidreletricas": 41,
+    "capacidade_total_GWh": 10338.46,
+    "aproveitamento_percentual": 75.0
+  },
+  {
+    "estado": "Mato Grosso do Sul",
+    "potencia_instalada_MW": 9483,
+    "usinas_hidreletricas": 98,
+    "capacidade_total_GWh": 1023.87,
+    "aproveitamento_percentual": 30.7
+  },
+  {
+    "estado": "Minas Gerais",
+    "potencia_instalada_MW": 8761,
+    "usinas_hidreletricas": 47,
+    "capacidade_total_GWh": 29294.48,
+    "aproveitamento_percentual": 40.3
+  },
+  {
+    "estado": "Pará",
+    "potencia_instalada_MW": 8737,
+    "usinas_hidreletricas": 81,
+    "capacidade_total_GWh": 16110.88,
+    "aproveitamento_percentual": 38.4
+  },
+  {
+    "estado": "Paraíba",
+    "potencia_instalada_MW": 3464,
+    "usinas_hidreletricas": 69,
+    "capacidade_total_GWh": 24367.93,
+    "aproveitamento_percentual": 66.4
+  },
+  {
+    "estado": "Paraná",
+    "potencia_instalada_MW": 13200,
+    "usinas_hidreletricas": 16,
+    "capacidade_total_GWh": 8210.12,
+    "aproveitamento_percentual": 46.7
+  },
+  {
+    "estado": "Pernambuco",
+    "potencia_instalada_MW": 7115,
+    "usinas_hidreletricas": 12,
+    "capacidade_total_GWh": 6641.23,
+    "aproveitamento_percentual": 37.6
+  },
+  {
+    "estado": "Piauí",
+    "potencia_instalada_MW": 1686,
+    "usinas_hidreletricas": 93,
+    "capacidade_total_GWh": 10845.45,
+    "aproveitamento_percentual": 56.9
+  },
+  {
+    "estado": "Rio de Janeiro",
+    "potencia_instalada_MW": 11095,
+    "usinas_hidreletricas": 2,
+    "capacidade_total_GWh": 11465.64,
+    "aproveitamento_percentual": 58.7
+  },
+  {
+    "estado": "Rio Grande do Norte",
+    "potencia_instalada_MW": 13101,
+    "usinas_hidreletricas": 65,
+    "capacidade_total_GWh": 15263.28,
+    "aproveitamento_percentual": 51.7
+  },
+  {
+    "estado": "Rio Grande do Sul",
+    "potencia_instalada_MW": 14381,
+    "usinas_hidreletricas": 85,
+    "capacidade_total_GWh": 28488.35,
+    "aproveitamento_percentual": 56.5
+  },
+  {
+    "estado": "Rondônia",
+    "potencia_instalada_MW": 18407,
+    "usinas_hidreletricas": 10,
+    "capacidade_total_GWh": 13095.42,
+    "aproveitamento_percentual": 68.2
+  },
+  {
+    "estado": "Roraima",
+    "potencia_instalada_MW": 13058,
+    "usinas_hidreletricas": 98,
+    "capacidade_total_GWh": 12499.07,
+    "aproveitamento_percentual": 46.2
+  },
+  {
+    "estado": "Santa Catarina",
+    "potencia_instalada_MW": 2023,
+    "usinas_hidreletricas": 5,
+    "capacidade_total_GWh": 24894.51,
+    "aproveitamento_percentual": 73.1
+  },
+  {
+    "estado": "São Paulo",
+    "potencia_instalada_MW": 3795,
+    "usinas_hidreletricas": 85,
+    "capacidade_total_GWh": 26424.12,
+    "aproveitamento_percentual": 73.6
+  },
+  {
+    "estado": "Sergipe",
+    "potencia_instalada_MW": 2880,
+    "usinas_hidreletricas": 74,
+    "capacidade_total_GWh": 17045.93,
+    "aproveitamento_percentual": 43.6
+  },
+  {
+    "estado": "Tocantins",
+    "potencia_instalada_MW": 14303,
+    "usinas_hidreletricas": 86,
+    "capacidade_total_GWh": 3111.7,
+    "aproveitamento_percentual": 30.2
+  }
+]

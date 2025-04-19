@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="../static/login.css" />
+    <link rel="icon" type="image/png/golden_carrot.png" href="../static" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+</head>
+
+<body>
+
+    <a href="/#" class="button-back">
+        <span>Voltar</span>
+    </a>
+
+    <div class="wrapper">
+        <form method="POST" action="/registro">
+            {{ form.hidden_tag() }}
+            <h1>Registro</h1>
+
+            <!-- Exibindo mensagens de erro -->
+            {% for field, errors in form.errors.items() %}
+            {% for error in errors %}
+            <div class="alert alert-danger">{{ error }}</div>
+            {% endfor %}
+            {% endfor %}
+
+            <div class="input-box">
+                <input type="text" name="username" placeholder="Nome de usuário" required>
+                <i class='bx bx-user-circle'></i>
+            </div>
+            <div class="input-box">
+                <input type="email" name="email" placeholder="E-mail" required>
+                <i class='bx bx-mail-send'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" name="password" placeholder="Senha" required>
+                <i class='bx bx-lock-alt'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" name="confirm_password" placeholder="Confirmar senha" required>
+                <i class='bx bx-lock-alt'></i>
+            </div>
+
+            <!-- Adicione um campo oculto para selecionar se o usuário é admin -->
+            <input type="hidden" name="is_admin" value="0">
+
+            <button type="submit" class="btn">Registrar</button>
+
+            <div class="register-link">
+                <p>Já possui uma conta?
+                    <a href="/login">Login</a>
+                </p>
+            </div>
+        </form>
+
+        <!-- Exibindo mensagens de flash -->
+        {% with messages = get_flashed_messages(category_filter=["error"]) %}
+        {% if messages %}
+        <div id="error-alert" class="alert alert-danger" role="alert">
+            <ul>
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        {% endwith %}
+    </div>
+
+    <script src="../static/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/script.js"></script>
+</body>
+
+</html>

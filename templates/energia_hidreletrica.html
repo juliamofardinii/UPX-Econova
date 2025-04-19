@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energia Hidrelétrica por Estado</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="./static/index.css" />
+    <link rel="stylesheet" href="./static/header.css" />
+    <link rel="icon" href="../static/img/logo.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <i class="bi bi-list menu-mobile"></i>
+    <header id="header">
+        <section class="profile">
+            <img src="../static/img/logo.png" alt="Logo Energia Renovável" />
+            <div class="profile-text">
+                <h2>Econova</h2>
+            </div>
+
+            <nav class="nav-menu">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/"><i class="bi bi-house"></i> Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#transicao2"><i class="bi bi-person"></i> Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#transicao3"><i class="bi bi-envelope"></i> Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/consumo"><i class="bi bi-lightning-fill"></i> Consumo de Energia
+                            Geral</a>
+                    </li>
+
+                    <!-- Dropdown de Fontes de Energia -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownFontes" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-bar-chart"></i> Fontes de Energia
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownFontes">
+                            <li><a class="dropdown-item" href="/energia_solar"><i class="bi bi-brightness-high"></i>
+                                    Energia Solar</a></li>
+                            <li><a class="dropdown-item" href="/energia_eolica"><i class="bi bi-wind"></i> Energia
+                                    Eólica</a></li>
+                            <li><a class="dropdown-item" href="/energia_hidreletrica"><i class="bi bi-droplet-half"></i>
+                                    Energia Hidrelétrica</a></li>
+                            <li><a class="dropdown-item" href="/energia_biomassa"><i class="bi bi-fire"></i> Energia
+                                    Biomassa</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+
+        {% if username %}
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown()">
+                Bem vindo, {{ username }}!
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+                <a href="/minha_conta">Minha Conta</a>
+                <a href="#" onclick="confirmLogout()">Logout</a>
+            </div>
+        </div>
+        {% else %}
+        <nav class="nav-menu">
+            <ul class="nav">
+                <li class="nav-item">
+                    <div class="login-button">
+                        <a href="/registro" class="btn-register btn-log-reg">Registrar</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="login-button">
+                        <a href="/login" class="btn-login btn-log-reg">Login</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        {% endif %}
+    </header>
+
+    <br><br><br><br>
+
+    <main id="main" class="container mt-5">
+        <section id="pesquisa">
+            <h2 class="text-center mb-4">Energia Hidrelétrica por Estado</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <label for="estadoHidro" class="form-label">Escolha um estado:</label>
+                    <select id="estadoHidro" class="form-select">
+                        <option selected disabled>Selecione o estado</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="dadosHidro" class="row justify-content-center text-center d-none">
+                <div class="col-md-6">
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title" id="tituloEstado"></h5>
+                            <p class="card-text" id="potencia"></p>
+                            <p class="card-text" id="capacidade"></p>
+                            <p class="card-text" id="aproveitamento"></p>
+                            <p class="card-text" id="usinas"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 mt-3">
+                    <div class="alert alert-secondary" role="alert">
+                        <strong>Legenda:</strong><br>
+                        <strong>Potência Instalada (MW):</strong> Total de potência elétrica das usinas instaladas no
+                        estado.<br>
+                        <strong>Capacidade Total (GWh):</strong> Volume de energia que pode ser gerado anualmente no
+                        estado.<br>
+                        <strong>Aproveitamento Potencial (%):</strong> Percentual médio do potencial hídrico
+                        utilizado.<br>
+                        <strong>Usinas Hidrelétricas:</strong> Número total de usinas em operação no estado.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <br>
+        <section id="dashboard" class="mt-5">
+            <h3 class="text-center mb-4">Painel Comparativo Geral</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <canvas id="graficoPotencia"></canvas>
+                </div>
+                <div class="col-md-6">
+                    <canvas id="graficoAproveitamento"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <br><br><br>
+
+        <figure style="text-align: center; margin-bottom: 2rem;">
+            <img src="../static/img/hidreletrica_foto.png" alt="Imagem hidrelétrica"
+                style="max-width: 70%; width: 400px; height: auto; border-radius: 8px;">
+            <figcaption style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
+                Fonte: <a href="https://www.novaenergia.com.br/blog/energia-hidreletrica/" target="_blank"
+                    rel="noopener noreferrer">www.novaenergia.com.br</a>
+            </figcaption>
+        </figure>
+
+        <section id="historia-hidreletrica" class="mt-5">
+            <h3 class="text-center mb-4">Sobre a Energia Hidrelétrica</h3>
+
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <h4>Origens e Evolução Global</h4>
+                    <p>
+                        A utilização da energia da água para realizar trabalho remonta à antiguidade, com civilizações
+                        como a grega e a romana empregando rodas d'água para moer grãos e irrigar plantações. No século
+                        XVIII, durante a Revolução Industrial, a energia hidráulica foi fundamental para mover máquinas
+                        em fábricas. A integração da energia hidráulica com a geração de eletricidade ocorreu no final
+                        do século XIX, com a construção da primeira usina hidrelétrica em 1882, em Appleton, Wisconsin,
+                        nos Estados Unidos, utilizando a força do rio Fox para gerar eletricidade. Desde então, a
+                        energia hidrelétrica tornou-se uma das principais fontes de energia renovável no mundo, com
+                        grandes usinas construídas em diversos países para atender à crescente demanda por eletricidade.
+                    </p>
+                    <p>
+                        <strong>Fonte:</strong> <a
+                            href="https://universodaenergia.com.br/glossario/como-surgiu-a-energia-hidreletrica-historia-e-impactos/"
+                            target="_blank">Universo da Energia</a>
+                    </p>
+
+                    <br>
+                    <h4>Energia Hidrelétrica no Brasil: Passado e Presente</h4>
+                    <p>
+                        No Brasil, a primeira usina hidrelétrica foi inaugurada em 1889, no município de Juiz de Fora,
+                        Minas Gerais, utilizando as águas do rio Paraibuna para gerar eletricidade. A partir do século
+                        XX, especialmente após a Segunda Guerra Mundial, o país investiu significativamente na
+                        construção de grandes usinas hidrelétricas para atender à crescente demanda por energia
+                        elétrica, impulsionada pelo processo de industrialização. Destacam-se usinas como Furnas,
+                        inaugurada em 1963, e Itaipu, inaugurada em 1984, que se tornou a maior usina hidrelétrica do
+                        mundo na época. Atualmente, a energia hidrelétrica representa uma parcela significativa da
+                        matriz energética brasileira, sendo responsável por cerca de 60% da geração de eletricidade do
+                        país.
+                    </p>
+                    <p>
+                        <strong>Fonte:</strong> <a href="https://mundoeducacao.uol.com.br/geografia/hidreletricas-no-brasil.htm"
+                            target="_blank">Mundo Educação</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <br>
+
+    </main>
+
+    <footer id="footer">
+        <div class="container-footer text-center mt-5">
+            &copy; Copyright <strong>Econova</strong>
+        </div>
+    </footer>
+
+    <script>
+        let hidroData = [];
+
+        fetch('../static/data/energia_hidreletrica_estados.json')
+            .then(response => response.json())
+            .then(data => {
+                hidroData = data;
+                const select = document.getElementById('estadoHidro');
+                data.forEach(item => {
+                    const opt = document.createElement('option');
+                    opt.value = item.estado;
+                    opt.textContent = item.estado;
+                    select.appendChild(opt);
+                });
+
+                const estados = data.map(d => d.estado);
+                const potencias = data.map(d => d.potencia_instalada_MW);
+                const aproveitamentos = data.map(d => d.aproveitamento_percentual);
+
+                new Chart(document.getElementById('graficoPotencia'), {
+                    type: 'bar',
+                    data: {
+                        labels: estados,
+                        datasets: [{
+                            label: 'Potência Instalada (MW)',
+                            data: potencias,
+                            backgroundColor: 'rgba(30, 144, 255, 0.6)'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+
+                new Chart(document.getElementById('graficoAproveitamento'), {
+                    type: 'line',
+                    data: {
+                        labels: estados,
+                        datasets: [{
+                            label: 'Aproveitamento Potencial (%)',
+                            data: aproveitamentos,
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            fill: false
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            });
+
+        document.getElementById('estadoHidro').addEventListener('change', function () {
+            const estadoSelecionado = this.value;
+            const info = hidroData.find(e => e.estado === estadoSelecionado);
+
+            if (info) {
+                document.getElementById('dadosHidro').classList.remove('d-none');
+                document.getElementById('tituloEstado').textContent = info.estado;
+                document.getElementById('potencia').textContent = `Potência Instalada: ${info.potencia_instalada_MW} MW`;
+                document.getElementById('capacidade').textContent = `Capacidade Total: ${info.capacidade_total_GWh} GWh`;
+                document.getElementById('aproveitamento').textContent = `Aproveitamento Potencial: ${info.aproveitamento_percentual}%`;
+                document.getElementById('usinas').textContent = `Número de Usinas Hidrelétricas: ${info.usinas_hidreletricas}`;
+            }
+        });
+    </script>
+
+    <script src="../static/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+[
+    {
+        "estado": "Acre",
+        "potencia_instalada_MW": 50,
+        "investimentos_GD_R$_bilhoes": 0.5,
+        "potencial_kWh_m2_dia": 5.2,
+        "parques_solares": 2
+    },
+    {
+        "estado": "Alagoas",
+        "potencia_instalada_MW": 120,
+        "investimentos_GD_R$_bilhoes": 1.2,
+        "potencial_kWh_m2_dia": 5.5,
+        "parques_solares": 5
+    },
+    {
+        "estado": "Amapá",
+        "potencia_instalada_MW": 30,
+        "investimentos_GD_R$_bilhoes": 0.3,
+        "potencial_kWh_m2_dia": 5.0,
+        "parques_solares": 1
+    },
+    {
+        "estado": "Amazonas",
+        "potencia_instalada_MW": 80,
+        "investimentos_GD_R$_bilhoes": 0.8,
+        "potencial_kWh_m2_dia": 5.1,
+        "parques_solares": 3
+    },
+    {
+        "estado": "Bahia",
+        "potencia_instalada_MW": 2400,
+        "investimentos_GD_R$_bilhoes": 4.0,
+        "potencial_kWh_m2_dia": 5.8,
+        "parques_solares": 40
+    },
+    {
+        "estado": "Ceará",
+        "potencia_instalada_MW": 500,
+        "investimentos_GD_R$_bilhoes": 1.5,
+        "potencial_kWh_m2_dia": 5.7,
+        "parques_solares": 10
+    },
+    {
+        "estado": "Distrito Federal",
+        "potencia_instalada_MW": 200,
+        "investimentos_GD_R$_bilhoes": 1.0,
+        "potencial_kWh_m2_dia": 5.6,
+        "parques_solares": 4
+    },
+    {
+        "estado": "Espírito Santo",
+        "potencia_instalada_MW": 300,
+        "investimentos_GD_R$_bilhoes": 1.0,
+        "potencial_kWh_m2_dia": 5.4,
+        "parques_solares": 6
+    },
+    {
+        "estado": "Goiás",
+        "potencia_instalada_MW": 1000,
+        "investimentos_GD_R$_bilhoes": 1.3,
+        "potencial_kWh_m2_dia": 5.7,
+        "parques_solares": 14
+    },
+    {
+        "estado": "Maranhão",
+        "potencia_instalada_MW": 400,
+        "investimentos_GD_R$_bilhoes": 0.9,
+        "potencial_kWh_m2_dia": 5.6,
+        "parques_solares": 11
+    },
+    {
+        "estado": "Mato Grosso",
+        "potencia_instalada_MW": 690,
+        "investimentos_GD_R$_bilhoes": 1.5,
+        "potencial_kWh_m2_dia": 5.8,
+        "parques_solares": 20
+    },
+    {
+        "estado": "Mato Grosso do Sul",
+        "potencia_instalada_MW": 600,
+        "investimentos_GD_R$_bilhoes": 1.4,
+        "potencial_kWh_m2_dia": 5.7,
+        "parques_solares": 18
+    },
+    {
+        "estado": "Minas Gerais",
+        "potencia_instalada_MW": 3173,
+        "investimentos_GD_R$_bilhoes": 4.5,
+        "potencial_kWh_m2_dia": 5.6,
+        "parques_solares": 37
+    },
+    {
+        "estado": "Pará",
+        "potencia_instalada_MW": 350,
+        "investimentos_GD_R$_bilhoes": 0.9,
+        "potencial_kWh_m2_dia": 5.2,
+        "parques_solares": 7
+    },
+    {
+        "estado": "Paraíba",
+        "potencia_instalada_MW": 166,
+        "investimentos_GD_R$_bilhoes": 0.8,
+        "potencial_kWh_m2_dia": 5.5,
+        "parques_solares": 10
+    },
+    {
+        "estado": "Paraná",
+        "potencia_instalada_MW": 1500,
+        "investimentos_GD_R$_bilhoes": 1.8,
+        "potencial_kWh_m2_dia": 5.3,
+        "parques_solares": 18
+    },
+    {
+        "estado": "Pernambuco",
+        "potencia_instalada_MW": 654,
+        "investimentos_GD_R$_bilhoes": 1.0,
+        "potencial_kWh_m2_dia": 5.6,
+        "parques_solares": 21
+    },
+    {
+        "estado": "Piauí",
+        "potencia_instalada_MW": 1168,
+        "investimentos_GD_R$_bilhoes": 1.2,
+        "potencial_kWh_m2_dia": 5.7,
+        "parques_solares": 33
+    },
+    {
+        "estado": "Rio de Janeiro",
+        "potencia_instalada_MW": 800,
+        "investimentos_GD_R$_bilhoes": 1.5,
+        "potencial_kWh_m2_dia": 5,
+        "parques_solares": "Sem dados suficientes"
+    },
+    {
+        "estado": "Rio Grande do Norte",
+        "potencia_instalada_MW": 842,
+        "investimentos_GD_R$_bilhoes": 1.5,
+        "potencial_kWh_m2_dia": 5.8,
+        "parques_solares": 25
+    },
+    {
+        "estado": "Rio Grande do Sul",
+        "potencia_instalada_MW": 2600,
+        "investimentos_GD_R$_bilhoes": 5.1,
+        "potencial_kWh_m2_dia": 5.3,
+        "parques_solares": 30
+    },
+    {
+        "estado": "Rondônia",
+        "potencia_instalada_MW": 550,
+        "investimentos_GD_R$_bilhoes": 1.0,
+        "potencial_kWh_m2_dia": 5.5,
+        "parques_solares": 10
+    },
+    {
+        "estado": "Roraima",
+        "potencia_instalada_MW": 75,
+        "investimentos_GD_R$_bilhoes": 0.2,
+        "potencial_kWh_m2_dia": 5.6,
+        "parques_solares": 2
+    },
+    {
+        "estado": "Santa Catarina",
+        "potencia_instalada_MW": 1400,
+        "investimentos_GD_R$_bilhoes": 2.5,
+        "potencial_kWh_m2_dia": 5.4,
+        "parques_solares": 20
+    },
+    {
+        "estado": "São Paulo",
+        "potencia_instalada_MW": 5300,
+        "investimentos_GD_R$_bilhoes": 6.0,
+        "potencial_kWh_m2_dia": 5.5,
+        "parques_solares": 50
+    },
+    {
+        "estado": "Sergipe",
+        "potencia_instalada_MW": 222,
+        "investimentos_GD_R$_bilhoes": 0.5,
+        "potencial_kWh_m2_dia": 5.6,
+        "parques_solares": 5
+    },
+    {
+        "estado": "Tocantins",
+        "potencia_instalada_MW": 355,
+        "investimentos_GD_R$_bilhoes": 0.8,
+        "potencial_kWh_m2_dia": 5.7,
+        "parques_solares": 8
+    }
+]

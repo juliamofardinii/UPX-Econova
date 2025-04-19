@@ -1,0 +1,191 @@
+[
+  {
+    "estado": "Acre",
+    "potencia_instalada_MW": 8754,
+    "usinas_biomassa": 23,
+    "producao_anual_GWh": 6098.47,
+    "tipo_principal": "Resíduos agrícolas"
+  },
+  {
+    "estado": "Alagoas",
+    "potencia_instalada_MW": 3453,
+    "usinas_biomassa": 5,
+    "producao_anual_GWh": 6788.42,
+    "tipo_principal": "Biogás"
+  },
+  {
+    "estado": "Amapá",
+    "potencia_instalada_MW": 8612,
+    "usinas_biomassa": 26,
+    "producao_anual_GWh": 6670.16,
+    "tipo_principal": "Resíduos agrícolas"
+  },
+  {
+    "estado": "Amazonas",
+    "potencia_instalada_MW": 7234,
+    "usinas_biomassa": 80,
+    "producao_anual_GWh": 4044.88,
+    "tipo_principal": "Biogás"
+  },
+  {
+    "estado": "Bahia",
+    "potencia_instalada_MW": 4494,
+    "usinas_biomassa": 29,
+    "producao_anual_GWh": 6666.84,
+    "tipo_principal": "Óleos vegetais"
+  },
+  {
+    "estado": "Ceará",
+    "potencia_instalada_MW": 9238,
+    "usinas_biomassa": 39,
+    "producao_anual_GWh": 3227.21,
+    "tipo_principal": "Cana-de-açúcar"
+  },
+  {
+    "estado": "Distrito Federal",
+    "potencia_instalada_MW": 5979,
+    "usinas_biomassa": 63,
+    "producao_anual_GWh": 4693.14,
+    "tipo_principal": "Óleos vegetais"
+  },
+  {
+    "estado": "Espírito Santo",
+    "potencia_instalada_MW": 4932,
+    "usinas_biomassa": 21,
+    "producao_anual_GWh": 5304.96,
+    "tipo_principal": "Biogás"
+  },
+  {
+    "estado": "Goiás",
+    "potencia_instalada_MW": 9620,
+    "usinas_biomassa": 41,
+    "producao_anual_GWh": 3737.97,
+    "tipo_principal": "Resíduos florestais"
+  },
+  {
+    "estado": "Maranhão",
+    "potencia_instalada_MW": 1066,
+    "usinas_biomassa": 49,
+    "producao_anual_GWh": 4215.43,
+    "tipo_principal": "Cana-de-açúcar"
+  },
+  {
+    "estado": "Mato Grosso",
+    "potencia_instalada_MW": 700,
+    "usinas_biomassa": 7,
+    "producao_anual_GWh": 4512.48,
+    "tipo_principal": "Resíduos agrícolas"
+  },
+  {
+    "estado": "Mato Grosso do Sul",
+    "potencia_instalada_MW": 2002,
+    "usinas_biomassa": 29,
+    "producao_anual_GWh": 2527.99,
+    "tipo_principal": "Resíduos agrícolas"
+  },
+  {
+    "estado": "Minas Gerais",
+    "potencia_instalada_MW": 7862,
+    "usinas_biomassa": 37,
+    "producao_anual_GWh": 4226.32,
+    "tipo_principal": "Óleos vegetais"
+  },
+  {
+    "estado": "Pará",
+    "potencia_instalada_MW": 6913,
+    "usinas_biomassa": 69,
+    "producao_anual_GWh": 6163.07,
+    "tipo_principal": "Resíduos agrícolas"
+  },
+  {
+    "estado": "Paraíba",
+    "potencia_instalada_MW": 907,
+    "usinas_biomassa": 7,
+    "producao_anual_GWh": 6046.12,
+    "tipo_principal": "Resíduos florestais"
+  },
+  {
+    "estado": "Paraná",
+    "potencia_instalada_MW": 4553,
+    "usinas_biomassa": 68,
+    "producao_anual_GWh": 4012.28,
+    "tipo_principal": "Resíduos agrícolas"
+  },
+  {
+    "estado": "Pernambuco",
+    "potencia_instalada_MW": 1841,
+    "usinas_biomassa": 16,
+    "producao_anual_GWh": 6561.9,
+    "tipo_principal": "Cana-de-açúcar"
+  },
+  {
+    "estado": "Piauí",
+    "potencia_instalada_MW": 4058,
+    "usinas_biomassa": 30,
+    "producao_anual_GWh": 1483.71,
+    "tipo_principal": "Resíduos florestais"
+  },
+  {
+    "estado": "Rio de Janeiro",
+    "potencia_instalada_MW": 1948,
+    "usinas_biomassa": 15,
+    "producao_anual_GWh": 6416.24,
+    "tipo_principal": "Resíduos agrícolas"
+  },
+  {
+    "estado": "Rio Grande do Norte",
+    "potencia_instalada_MW": 8920,
+    "usinas_biomassa": 21,
+    "producao_anual_GWh": 2684.75,
+    "tipo_principal": "Óleos vegetais"
+  },
+  {
+    "estado": "Rio Grande do Sul",
+    "potencia_instalada_MW": 3025,
+    "usinas_biomassa": 8,
+    "producao_anual_GWh": 7039.55,
+    "tipo_principal": "Biogás"
+  },
+  {
+    "estado": "Rondônia",
+    "potencia_instalada_MW": 3370,
+    "usinas_biomassa": 29,
+    "producao_anual_GWh": 3430.55,
+    "tipo_principal": "Biogás"
+  },
+  {
+    "estado": "Roraima",
+    "potencia_instalada_MW": 6659,
+    "usinas_biomassa": 6,
+    "producao_anual_GWh": 4229.12,
+    "tipo_principal": "Resíduos florestais"
+  },
+  {
+    "estado": "Santa Catarina",
+    "potencia_instalada_MW": 4777,
+    "usinas_biomassa": 24,
+    "producao_anual_GWh": 3157.32,
+    "tipo_principal": "Biogás"
+  },
+  {
+    "estado": "São Paulo",
+    "potencia_instalada_MW": 8965,
+    "usinas_biomassa": 66,
+    "producao_anual_GWh": 6063.6,
+    "tipo_principal": "Resíduos agrícolas"
+  },
+  {
+    "estado": "Sergipe",
+    "potencia_instalada_MW": 4583,
+    "usinas_biomassa": 13,
+    "producao_anual_GWh": 1945.25,
+    "tipo_principal": "Resíduos florestais"
+  },
+  {
+    "estado": "Tocantins",
+    "potencia_instalada_MW": 2000,
+    "usinas_biomassa": 69,
+    "producao_anual_GWh": 6407.57,
+    "tipo_principal": "Resíduos agrícolas"
+  }
+]
