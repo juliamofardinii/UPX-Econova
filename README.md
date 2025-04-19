@@ -24,7 +24,7 @@ O objetivo principal é apresentar, de forma interativa e visual, dados estatís
 
 1. Clone o repositório:
 
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   git clone [https://github.com/seu-usuario/nome-do-repositorio.git](https://github.com/LeoEtergen/UPX-Econova.git)
 
 2. Acesse a pasta do repositório pelo VS Code ou outro editor de sua preferência.
 
