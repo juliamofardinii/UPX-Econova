@@ -1,142 +1,674 @@
 {
   "TOTAL POR UF": {
-    "media": 13623972.2,
-    "soma": 68119861,
-    "desvio_padrao": 1045596.88
+    "geral": {
+      "media": 13623972.2,
+      "soma": 68119861,
+      "desvio_padrao": 1045596.88
+    },
+    "por_ano": {
+      "2022": {
+        "media": 13063520.0,
+        "soma": 13063520,
+        "desvio_padrao": null
+      },
+      "2023": {
+        "media": 13070016.0,
+        "soma": 13070016,
+        "desvio_padrao": null
+      },
+      "2024": {
+        "media": 15423785.0,
+        "soma": 15423785,
+        "desvio_padrao": null
+      }
+    }
   },
   "Rondonia": {
-    "media": 123233.4,
-    "soma": 616167,
-    "desvio_padrao": 17942.65
+    "geral": {
+      "media": 123233.4,
+      "soma": 616167,
+      "desvio_padrao": 17942.65
+    },
+    "por_ano": {
+      "2022": {
+        "media": 125078.0,
+        "soma": 125078,
+        "desvio_padrao": null
+      },
+      "2023": {
+        "media": 124348.0,
+        "soma": 124348,
+        "desvio_padrao": null
+      },
+      "2024": {
+        "media": 151434.0,
+        "soma": 151434,
+        "desvio_padrao": null
+      }
+    }
   },
   "Acre": {
-    "media": 48181.8,
-    "soma": 240909,
-    "desvio_padrao": 5941.14
+    "geral": {
+      "media": 48181.8,
+      "soma": 240909,
+      "desvio_padrao": 5941.14
+    },
+    "por_ano": {
+      "2022": {
+        "media": 46444.0,
+        "soma": 46444,
+        "desvio_padrao": null
+      },
+      "2023": {
+        "media": 47888.0,
+        "soma": 47888,
+        "desvio_padrao": null
+      },
+      "2024": {
+        "media": 57641.0,
+        "soma": 57641,
+        "desvio_padrao": null
+      }
+    }
   },
   "Amazonas": {
-    "media": 184505.2,
-    "soma": 922526,
-    "desvio_padrao": 20457.14
+    "geral": {
+      "media": 184505.2,
+      "soma": 922526,
+      "desvio_padrao": 20457.14
+    },
+    "por_ano": {
+      "2022": {
+        "media": 191847.0,
+        "soma": 191847,
+        "desvio_padrao": null
+      },
+      "2023": {
+        "media": 173506.0,
+        "soma": 173506,
+        "desvio_padrao": null
+      },
+      "2024": {
+        "media": 216708.0,
+        "soma": 216708,
+        "desvio_padrao": null
+      }
+    }
   },
   "Roraima": {
-    "media": 50477.0,
-    "soma": 252385,
-    "desvio_padrao": 12059.77
+    "geral": {
+      "media": 50477.0,
+      "soma": 252385,
+      "desvio_padrao": 12059.77
+    },
+    "por_ano": {
+      "2022": {
+        "media": 47709.0,
+        "soma": 47709,
+        "desvio_padrao": null
+      },
+      "2023": {
+        "media": 53436.0,
+        "soma": 53436,
+        "desvio_padrao": null
+      },
+      "2024": {
+        "media": 69823.0,
+        "soma": 69823,
+        "desvio_padrao": null
+      }
+    }
   },
   "Para": {
-    "media": 360596.0,
-    "soma": 1802980,
-    "desvio_padrao": 55589.88
+    "geral": {
+      "media": 360596.0,
+      "soma": 1802980,
+      "desvio_padrao": 55589.88
+    },
+    "por_ano": {
+      "2022": {
+        "media": 341131.0,
+        "soma": 341131,
+        "desvio_padrao": null
+      },
+      "2023": {
+        "media": 374703.0,
+        "soma": 374703,
+        "desvio_padrao": null
+      },
+      "2024": {
+        "media": 449382.0,
+        "soma": 449382,
+        "desvio_padrao": null
+      }
+    }
   },
   "Amapa": {
-    "media": 48406.2,
-    "soma": 242031,
-    "desvio_padrao": 9968.8
+    "geral": {
+      "media": 48406.2,
+      "soma": 242031,
+      "desvio_padrao": 9968.8
+    },
+    "por_ano": {
+      "2022": {
+        "media": 41310.0,
+        "soma": 41310,
+        "desvio_padrao": null
+      },
+      "2023": {
+        "media": 43880.0,
+        "soma": 43880,
+        "desvio_padrao": null
+      },
+      "2024": {
+        "media": 65789.0,
+        "soma": 65789,
+        "desvio_padrao": null
+      }
+    }
   },
   "Tocantins": {
-    "media": 92689.6,
-    "soma": 463448,
-    "desvio_padrao": 11861.55
+    "geral": {
+      "media": 92689.6,
+      "soma": 463448,
+      "desvio_padrao": 11861.55
+    },
+    "por_ano": {
+      "2022": {
+        "media": 85127.0,
+        "soma": 85127,
+        "desvio_padrao": null
+      },
+      "2023": {
+        "media": 90864.0,
+        "soma": 90864,
+        "desvio_padrao": null
+      },
+      "2024": {
+        "media": 113525.0,
+        "soma": 113525,
+        "desvio_padrao": null
+      }
+    }
   },
   "Maranhao": {
-    "media": 329286.0,
-    "soma": 1646430,
-    "desvio_padrao": 51795.43
+    "geral": {
+      "media": 329286.0,
+      "soma": 1646430,
+      "desvio_padrao": 51795.43
+    },
+    "por_ano": {
+      "2022": {
+        "media": 306723.0,
+        "soma": 306723,
+        "desvio_padrao": null
+      },
+      "2023": {
+        "media": 342593.0,
+        "soma": 342593,
+        "desvio_padrao": null
+      },
+      "2024": {
+        "media": 413115.0,
+        "soma": 413115,
+        "desvio_padrao": null
+      }
+    }
   },
   "Piaui": {
-    "media": 169648.8,
-    "soma": 848244,
-    "desvio_padrao": 18886.63
+    "geral": {
+      "media": 169648.8,
+      "soma": 848244,
+      "desvio_padrao": 18886.63
+    },
+    "por_ano": {
+      "2022": {
+        "media": 158342.0,
+        "soma": 158342,
+        "desvio_padrao": null
+      },
+      "2023": {
+        "media": 163918.0,
+        "soma": 163918,
+        "desvio_padrao": null
+      },
+      "2024": {
+        "media": 201987.0,
+        "soma": 201987,
+        "desvio_padrao": null
+      }
+    }
   },
   "Ceara": {
-    "media": 451589.8,
-    "soma": 2257949,
-    "desvio_padrao": 32445.97
+    "geral": {
+      "media": 451589.8,
+      "soma": 2257949,
+      "desvio_padrao": 32445.97
+    },
+    "por_ano": {
+      "2022": {
+        "media": 432961.0,
+        "soma": 432961,
+        "desvio_padrao": null
+      },
+      "2023": {
+        "media": 445700.0,
+        "soma": 445700,
+        "desvio_padrao": null
+      },
+      "2024": {
+        "media": 506861.0,
+        "soma": 506861,
+        "desvio_padrao": null
+      }
+    }
   },
   "Rio Grande do Norte": {
-    "media": 213993.6,
-    "soma": 1069968,
-    "desvio_padrao": 7896.38
+    "geral": {
+      "media": 213993.6,
+      "soma": 1069968,
+      "desvio_padrao": 7896.38
+    },
+    "por_ano": {
+      "2022": {
+        "media": 218118.0,
+        "soma": 218118,
+        "desvio_padrao": null
+      },
+      "2023": {
+        "media": 207768.0,
+        "soma": 207768,
+        "desvio_padrao": null
+      },
+      "2024": {
+        "media": 225112.0,
+        "soma": 225112,
+        "desvio_padrao": null
+      }
+    }
   },
   "Paraiba": {
-    "media": 210017.2,
-    "soma": 1050086,
-    "desvio_padrao": 22517.24
+    "geral": {
+      "media": 210017.2,
+      "soma": 1050086,
+      "desvio_padrao": 22517.24
+    },
+    "por_ano": {
+      "2022": {
+        "media": 200868.0,
+        "soma": 200868,
+        "desvio_padrao": null
+      },
+      "2023": {
+        "media": 216626.0,
+        "soma": 216626,
+        "desvio_padrao": null
+      },
+      "2024": {
+        "media": 246127.0,
+        "soma": 246127,
+        "desvio_padrao": null
+      }
+    }
   },
   "Pernambuco": {
-    "media": 482552.8,
-    "soma": 2412764,
-    "desvio_padrao": 28869.75
+    "geral": {
+      "media": 482552.8,
+      "soma": 2412764,
+      "desvio_padrao": 28869.75
+    },
+    "por_ano": {
+      "2022": {
+        "media": 473644.0,
+        "soma": 473644,
+        "desvio_padrao": null
+      },
+      "2023": {
+        "media": 479570.0,
+        "soma": 479570,
+        "desvio_padrao": null
+      },
+      "2024": {
+        "media": 525268.0,
+        "soma": 525268,
+        "desvio_padrao": null
+      }
+    }
   },
   "Alagoas": {
-    "media": 151382.6,
-    "soma": 756913,
-    "desvio_padrao": 20004.35
+    "geral": {
+      "media": 151382.6,
+      "soma": 756913,
+      "desvio_padrao": 20004.35
+    },
+    "por_ano": {
+      "2022": {
+        "media": 144181.0,
+        "soma": 144181,
+        "desvio_padrao": null
+      },
+      "2023": {
+        "media": 158684.0,
+        "soma": 158684,
+        "desvio_padrao": null
+      },
+      "2024": {
+        "media": 182923.0,
+        "soma": 182923,
+        "desvio_padrao": null
+      }
+    }
   },
   "Sergipe": {
-    "media": 119417.6,
-    "soma": 597088,
-    "desvio_padrao": 10558.36
+    "geral": {
+      "media": 119417.6,
+      "soma": 597088,
+      "desvio_padrao": 10558.36
+    },
+    "por_ano": {
+      "2022": {
+        "media": 116487.0,
+        "soma": 116487,
+        "desvio_padrao": null
+      },
+      "2023": {
+        "media": 123020.0,
+        "soma": 123020,
+        "desvio_padrao": null
+      },
+      "2024": {
+        "media": 135940.0,
+        "soma": 135940,
+        "desvio_padrao": null
+      }
+    }
   },
   "Bahia": {
-    "media": 674790.8,
-    "soma": 3373954,
-    "desvio_padrao": 38123.32
+    "geral": {
+      "media": 674790.8,
+      "soma": 3373954,
+      "desvio_padrao": 38123.32
+    },
+    "por_ano": {
+      "2022": {
+        "media": 636018.0,
+        "soma": 636018,
+        "desvio_padrao": null
+      },
+      "2023": {
+        "media": 667611.0,
+        "soma": 667611,
+        "desvio_padrao": null
+      },
+      "2024": {
+        "media": 729168.0,
+        "soma": 729168,
+        "desvio_padrao": null
+      }
+    }
   },
   "Minas Gerais": {
-    "media": 1135808.0,
-    "soma": 5679040,
-    "desvio_padrao": 122487.18
+    "geral": {
+      "media": 1135808.0,
+      "soma": 5679040,
+      "desvio_padrao": 122487.18
+    },
+    "por_ano": {
+      "2022": {
+        "media": 1064105.0,
+        "soma": 1064105,
+        "desvio_padrao": null
+      },
+      "2023": {
+        "media": 1130420.0,
+        "soma": 1130420,
+        "desvio_padrao": null
+      },
+      "2024": {
+        "media": 1344016.0,
+        "soma": 1344016,
+        "desvio_padrao": null
+      }
+    }
   },
   "Espirito Santo": {
-    "media": 265625.8,
-    "soma": 1328129,
-    "desvio_padrao": 32346.05
+    "geral": {
+      "media": 265625.8,
+      "soma": 1328129,
+      "desvio_padrao": 32346.05
+    },
+    "por_ano": {
+      "2022": {
+        "media": 241844.0,
+        "soma": 241844,
+        "desvio_padrao": null
+      },
+      "2023": {
+        "media": 256168.0,
+        "soma": 256168,
+        "desvio_padrao": null
+      },
+      "2024": {
+        "media": 321604.0,
+        "soma": 321604,
+        "desvio_padrao": null
+      }
+    }
   },
   "Rio de Janeiro": {
-    "media": 1158670.6,
-    "soma": 5793353,
-    "desvio_padrao": 195430.17
+    "geral": {
+      "media": 1158670.6,
+      "soma": 5793353,
+      "desvio_padrao": 195430.17
+    },
+    "por_ano": {
+      "2022": {
+        "media": 1156749.0,
+        "soma": 1156749,
+        "desvio_padrao": null
+      },
+      "2023": {
+        "media": 825888.0,
+        "soma": 825888,
+        "desvio_padrao": null
+      },
+      "2024": {
+        "media": 1215770.0,
+        "soma": 1215770,
+        "desvio_padrao": null
+      }
+    }
   },
   "Sao Paulo": {
-    "media": 3771746.4,
-    "soma": 18858732,
-    "desvio_padrao": 266949.31
+    "geral": {
+      "media": 3771746.4,
+      "soma": 18858732,
+      "desvio_padrao": 266949.31
+    },
+    "por_ano": {
+      "2022": {
+        "media": 3529925.0,
+        "soma": 3529925,
+        "desvio_padrao": null
+      },
+      "2023": {
+        "media": 3643339.0,
+        "soma": 3643339,
+        "desvio_padrao": null
+      },
+      "2024": {
+        "media": 4165585.0,
+        "soma": 4165585,
+        "desvio_padrao": null
+      }
+    }
   },
   "Parana": {
-    "media": 789599.6,
-    "soma": 3947998,
-    "desvio_padrao": 84705.76
+    "geral": {
+      "media": 789599.6,
+      "soma": 3947998,
+      "desvio_padrao": 84705.76
+    },
+    "por_ano": {
+      "2022": {
+        "media": 778327.0,
+        "soma": 778327,
+        "desvio_padrao": null
+      },
+      "2023": {
+        "media": 777570.0,
+        "soma": 777570,
+        "desvio_padrao": null
+      },
+      "2024": {
+        "media": 932348.0,
+        "soma": 932348,
+        "desvio_padrao": null
+      }
+    }
   },
   "Santa Catarina": {
-    "media": 674211.6,
-    "soma": 3371058,
-    "desvio_padrao": 70794.53
+    "geral": {
+      "media": 674211.6,
+      "soma": 3371058,
+      "desvio_padrao": 70794.53
+    },
+    "por_ano": {
+      "2022": {
+        "media": 665615.0,
+        "soma": 665615,
+        "desvio_padrao": null
+      },
+      "2023": {
+        "media": 647472.0,
+        "soma": 647472,
+        "desvio_padrao": null
+      },
+      "2024": {
+        "media": 798045.0,
+        "soma": 798045,
+        "desvio_padrao": null
+      }
+    }
   },
   "Rio Grande do Sul": {
-    "media": 919683.6,
-    "soma": 4598418,
-    "desvio_padrao": 32363.72
+    "geral": {
+      "media": 919683.6,
+      "soma": 4598418,
+      "desvio_padrao": 32363.72
+    },
+    "por_ano": {
+      "2022": {
+        "media": 903875.0,
+        "soma": 903875,
+        "desvio_padrao": null
+      },
+      "2023": {
+        "media": 922863.0,
+        "soma": 922863,
+        "desvio_padrao": null
+      },
+      "2024": {
+        "media": 973701.0,
+        "soma": 973701,
+        "desvio_padrao": null
+      }
+    }
   },
   "Mato Grosso do Sul": {
-    "media": 211809.0,
-    "soma": 1059045,
-    "desvio_padrao": 16850.46
+    "geral": {
+      "media": 211809.0,
+      "soma": 1059045,
+      "desvio_padrao": 16850.46
+    },
+    "por_ano": {
+      "2022": {
+        "media": 215186.0,
+        "soma": 215186,
+        "desvio_padrao": null
+      },
+      "2023": {
+        "media": 196376.0,
+        "soma": 196376,
+        "desvio_padrao": null
+      },
+      "2024": {
+        "media": 236997.0,
+        "soma": 236997,
+        "desvio_padrao": null
+      }
+    }
   },
   "Mato Grosso": {
-    "media": 286605.6,
-    "soma": 1433028,
-    "desvio_padrao": 28614.8
+    "geral": {
+      "media": 286605.6,
+      "soma": 1433028,
+      "desvio_padrao": 28614.8
+    },
+    "por_ano": {
+      "2022": {
+        "media": 278264.0,
+        "soma": 278264,
+        "desvio_padrao": null
+      },
+      "2023": {
+        "media": 274378.0,
+        "soma": 274378,
+        "desvio_padrao": null
+      },
+      "2024": {
+        "media": 337543.0,
+        "soma": 337543,
+        "desvio_padrao": null
+      }
+    }
   },
   "Goias": {
-    "media": 497840.6,
-    "soma": 2489203,
-    "desvio_padrao": 60655.36
+    "geral": {
+      "media": 497840.6,
+      "soma": 2489203,
+      "desvio_padrao": 60655.36
+    },
+    "por_ano": {
+      "2022": {
+        "media": 465827.0,
+        "soma": 465827,
+        "desvio_padrao": null
+      },
+      "2023": {
+        "media": 485013.0,
+        "soma": 485013,
+        "desvio_padrao": null
+      },
+      "2024": {
+        "media": 603114.0,
+        "soma": 603114,
+        "desvio_padrao": null
+      }
+    }
   },
   "Distrito Federal": {
-    "media": 201601.8,
-    "soma": 1008009,
-    "desvio_padrao": 6696.56
+    "geral": {
+      "media": 201601.8,
+      "soma": 1008009,
+      "desvio_padrao": 6696.56
+    },
+    "por_ano": {
+      "2022": {
+        "media": 197813.0,
+        "soma": 197813,
+        "desvio_padrao": null
+      },
+      "2023": {
+        "media": 196414.0,
+        "soma": 196414,
+        "desvio_padrao": null
+      },
+      "2024": {
+        "media": 204259.0,
+        "soma": 204259,
+        "desvio_padrao": null
+      }
+    }
   }
 }

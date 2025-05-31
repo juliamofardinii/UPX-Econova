@@ -27,7 +27,7 @@ anos_interesse = ['2020', '2021', '2022', '2023', '2024']
 df = df.loc[:, df.columns.get_level_values(0).isin(anos_interesse)]
 
 # 🔢 Converte os dados de texto para float
-df = df.apply(lambda col: col.astype(str).str.replace('.', '', regex=False).str.replace(',', '.', regex=False))
+df = df.applymap(lambda x: str(x).replace('.', '').replace(',', '.') if isinstance(x, str) else x)
 df = df.apply(pd.to_numeric, errors='coerce')
 
 # 📊 Gera estatísticas
@@ -35,11 +35,33 @@ estatisticas = {}
 
 for estado in df.index:
     dados_estado = df.loc[estado].dropna()
+
     estatisticas[estado] = {
-        'media': round(dados_estado.mean(), 2),
-        'soma': round(dados_estado.sum(), 2),
-        'desvio_padrao': round(dados_estado.std(), 2)
+        'geral': {
+            'media': round(dados_estado.mean(), 2),
+            'soma': round(dados_estado.sum(), 2),
+            'desvio_padrao': round(dados_estado.std(), 2)
+        },
+        'por_ano': {}
     }
+
+    # 🔥 Análise dos últimos 3 anos (2022, 2023, 2024) separadamente
+    for ano in ['2022', '2023', '2024']:
+        colunas_ano = [col for col in dados_estado.index if col[0] == ano]
+        dados_ano = dados_estado[colunas_ano].dropna()
+
+        if not dados_ano.empty:
+            estatisticas[estado]['por_ano'][ano] = {
+                'media': round(dados_ano.mean(), 2),
+                'soma': round(dados_ano.sum(), 2),
+                'desvio_padrao': round(dados_ano.std(), 2)
+            }
+        else:
+            estatisticas[estado]['por_ano'][ano] = {
+                'media': None,
+                'soma': None,
+                'desvio_padrao': None
+            }
 
 # 🔧 Função para conversão de tipos NumPy no JSON
 def converter(obj):
@@ -55,4 +77,4 @@ def converter(obj):
 with open('estatisticas_consumo_residencial.json', 'w', encoding='utf-8') as f:
     json.dump(estatisticas, f, ensure_ascii=False, indent=4, default=converter)
 
-print("✅ Análise estatística salva em 'estatisticas_consumo.json'")
+print("✅ Análise estatística salva em 'estatisticas_consumo_residencial.json'")

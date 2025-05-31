@@ -181,7 +181,7 @@
     <script>
       const estadosData = {};
 
-      fetch("../static/data/estatisticas_consumo.json")
+      fetch("../static/data/estatisticas_consumo_residencial.json")
         .then((response) => response.json())
         .then((data) => {
           Object.assign(estadosData, data);
@@ -205,12 +205,12 @@
               estadoSelecionado === "BRASIL" ? "Brasil" : estadoSelecionado;
             document.getElementById(
               "estadoMedia"
-            ).textContent = `Média de consumo: ${dados.media.toLocaleString(
+            ).textContent = `Média de consumo residencial: ${dados.media.toLocaleString(
               "pt-BR"
             )} kWh`;
             document.getElementById(
               "estadoSoma"
-            ).textContent = `Consumo total: ${dados.soma.toLocaleString(
+            ).textContent = `Consumo total residencial: ${dados.soma.toLocaleString(
               "pt-BR"
             )} kWh`;
             document.getElementById(
@@ -237,7 +237,7 @@
               labels: labels,
               datasets: [
                 {
-                  label: "Consumo Total (kWh)",
+                  label: "Consumo Total Residencial (kWh)",
                   data: totais,
                   backgroundColor: "rgba(54, 162, 235, 0.6)",
                 },
@@ -259,7 +259,7 @@
               labels: labels,
               datasets: [
                 {
-                  label: "Média de Consumo (kWh)",
+                  label: "Média de Consumo Residencial (kWh)",
                   data: medias,
                   borderColor: "rgba(255, 206, 86, 1)",
                   fill: false,
