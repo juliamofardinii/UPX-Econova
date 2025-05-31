@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consumo de Energia por Estado</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="./static/index.css" />
+    <link rel="stylesheet" href="./static/header.css" />
+    <link rel="icon" type="image/png" href="../static/img/logo.png" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <i class="bi bi-list menu-mobile"></i>
+
+    <header id="header">
+      <section class="profile">
+        <img src="../static/img/logo.png" alt="Logo Energia Renovável" />
+        <div class="profile-text">
+          <h2>Econova</h2>
+        </div>
+
+        <nav class="nav-menu">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/"
+                ><i class="bi bi-house"></i> Início</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#transicao2"
+                ><i class="bi bi-person"></i> Sobre</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#transicao3"
+                ><i class="bi bi-envelope"></i> Contato</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/consumo"
+                ><i class="bi bi-lightning-fill"></i> Consumo de Energia
+                Geral</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/energia_residencial"
+                ><i class="bi bi bi-house"></i> Consumo de Energia Geral</a
+              >
+            </li>
+
+            <!-- Dropdown de Fontes de Energia -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="dropdownFontes"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi bi-bar-chart"></i> Fontes de Energia
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownFontes">
+                <li>
+                  <a class="dropdown-item" href="/energia_solar"
+                    ><i class="bi bi-brightness-high"></i> Energia Solar</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/energia_eolica"
+                    ><i class="bi bi-wind"></i> Energia Eólica</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/energia_hidreletrica"
+                    ><i class="bi bi-droplet-half"></i> Energia Hidrelétrica</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/energia_biomassa"
+                    ><i class="bi bi-fire"></i> Energia Biomassa</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </section>
+
+      {% if username %}
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown()">
+          Bem vindo, {{ username }}!
+        </button>
+        <div class="dropdown-content" id="myDropdown">
+          <a href="/minha_conta">Minha Conta</a>
+          <a href="#" onclick="confirmLogout()">Logout</a>
+        </div>
+      </div>
+      {% else %}
+      <nav class="nav-menu">
+        <ul class="nav">
+          <li class="nav-item">
+            <div class="login-button">
+              <a href="/registro" class="btn-register btn-log-reg">Registrar</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <div class="login-button">
+              <a href="/login" class="btn-login btn-log-reg">Login</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      {% endif %}
+    </header>
+
+    <br /><br /><br /><br />
+
+    <main id="main" class="container mt-5">
+      <section id="pesquisa">
+        <h2 class="text-center mb-4">Consumo de Energia por Estado</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <label for="estado" class="form-label">Escolha um estado:</label>
+            <select class="form-select" id="estado">
+              <option value="BRASIL" selected>Total (Brasil)</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="resultado" class="row justify-content-center text-center">
+          <div class="col-md-6">
+            <div class="card mt-4">
+              <div class="card-body">
+                <h5 class="card-title" id="estadoTitulo">Brasil</h5>
+                <p class="card-text" id="estadoMedia"></p>
+                <p class="card-text" id="estadoSoma"></p>
+                <p class="card-text" id="estadoDesvio"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8 mt-3">
+            <div class="alert alert-secondary" role="alert">
+              <strong>Legenda:</strong><br />
+              <strong>Média de Consumo:</strong> Consumo médio de energia
+              elétrica no estado no período analisado.<br />
+              <strong>Consumo Total:</strong> Quantidade total de energia
+              consumida no estado (em kWh).<br />
+              <strong>Desvio Padrão:</strong> Variação do consumo em relação à
+              média, indicando a dispersão dos dados.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="dashboard" class="mt-5">
+        <h3 class="text-center mb-4">Painel Comparativo Geral</h3>
+        <div class="row">
+          <div class="col-md-6">
+            <canvas id="graficoTotal"></canvas>
+          </div>
+          <div class="col-md-6">
+            <canvas id="graficoMedia"></canvas>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <div class="container-footer text-center mt-5">
+        &copy; Copyright <strong>Econova</strong>
+      </div>
+    </footer>
+
+    <script>
+      const estadosData = {};
+
+      fetch("../static/data/estatisticas_consumo.json")
+        .then((response) => response.json())
+        .then((data) => {
+          Object.assign(estadosData, data);
+
+          const select = document.getElementById("estado");
+          Object.keys(data).forEach((estado) => {
+            if (estado !== "TOTAL POR UF") {
+              const option = document.createElement("option");
+              option.value = estado;
+              option.textContent = estado;
+              select.appendChild(option);
+            }
+          });
+
+          function atualizarDados(estadoSelecionado) {
+            const dados =
+              estadoSelecionado === "BRASIL"
+                ? data["TOTAL POR UF"]
+                : data[estadoSelecionado];
+            document.getElementById("estadoTitulo").textContent =
+              estadoSelecionado === "BRASIL" ? "Brasil" : estadoSelecionado;
+            document.getElementById(
+              "estadoMedia"
+            ).textContent = `Média de consumo: ${dados.media.toLocaleString(
+              "pt-BR"
+            )} kWh`;
+            document.getElementById(
+              "estadoSoma"
+            ).textContent = `Consumo total: ${dados.soma.toLocaleString(
+              "pt-BR"
+            )} kWh`;
+            document.getElementById(
+              "estadoDesvio"
+            ).textContent = `Desvio padrão: ${dados.desvio_padrao.toLocaleString(
+              "pt-BR"
+            )} kWh`;
+          }
+
+          // Inicializar com dados do Brasil
+          atualizarDados("BRASIL");
+
+          select.addEventListener("change", () => {
+            atualizarDados(select.value);
+          });
+
+          const labels = Object.keys(data).filter((e) => e !== "TOTAL POR UF");
+          const totais = labels.map((e) => data[e].soma);
+          const medias = labels.map((e) => data[e].media);
+
+          new Chart(document.getElementById("graficoTotal"), {
+            type: "bar",
+            data: {
+              labels: labels,
+              datasets: [
+                {
+                  label: "Consumo Total (kWh)",
+                  data: totais,
+                  backgroundColor: "rgba(54, 162, 235, 0.6)",
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              scales: {
+                y: {
+                  beginAtZero: true,
+                },
+              },
+            },
+          });
+
+          new Chart(document.getElementById("graficoMedia"), {
+            type: "line",
+            data: {
+              labels: labels,
+              datasets: [
+                {
+                  label: "Média de Consumo (kWh)",
+                  data: medias,
+                  borderColor: "rgba(255, 206, 86, 1)",
+                  fill: false,
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              scales: {
+                y: {
+                  beginAtZero: false,
+                },
+              },
+            },
+          });
+        });
+    </script>
+
+    <script src="../static/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/script.js"></script>
+  </body>
+</html>

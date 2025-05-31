@@ -1,0 +1,142 @@
+{
+  "TOTAL POR UF": {
+    "media": 13623972.2,
+    "soma": 68119861,
+    "desvio_padrao": 1045596.88
+  },
+  "Rondonia": {
+    "media": 123233.4,
+    "soma": 616167,
+    "desvio_padrao": 17942.65
+  },
+  "Acre": {
+    "media": 48181.8,
+    "soma": 240909,
+    "desvio_padrao": 5941.14
+  },
+  "Amazonas": {
+    "media": 184505.2,
+    "soma": 922526,
+    "desvio_padrao": 20457.14
+  },
+  "Roraima": {
+    "media": 50477.0,
+    "soma": 252385,
+    "desvio_padrao": 12059.77
+  },
+  "Para": {
+    "media": 360596.0,
+    "soma": 1802980,
+    "desvio_padrao": 55589.88
+  },
+  "Amapa": {
+    "media": 48406.2,
+    "soma": 242031,
+    "desvio_padrao": 9968.8
+  },
+  "Tocantins": {
+    "media": 92689.6,
+    "soma": 463448,
+    "desvio_padrao": 11861.55
+  },
+  "Maranhao": {
+    "media": 329286.0,
+    "soma": 1646430,
+    "desvio_padrao": 51795.43
+  },
+  "Piaui": {
+    "media": 169648.8,
+    "soma": 848244,
+    "desvio_padrao": 18886.63
+  },
+  "Ceara": {
+    "media": 451589.8,
+    "soma": 2257949,
+    "desvio_padrao": 32445.97
+  },
+  "Rio Grande do Norte": {
+    "media": 213993.6,
+    "soma": 1069968,
+    "desvio_padrao": 7896.38
+  },
+  "Paraiba": {
+    "media": 210017.2,
+    "soma": 1050086,
+    "desvio_padrao": 22517.24
+  },
+  "Pernambuco": {
+    "media": 482552.8,
+    "soma": 2412764,
+    "desvio_padrao": 28869.75
+  },
+  "Alagoas": {
+    "media": 151382.6,
+    "soma": 756913,
+    "desvio_padrao": 20004.35
+  },
+  "Sergipe": {
+    "media": 119417.6,
+    "soma": 597088,
+    "desvio_padrao": 10558.36
+  },
+  "Bahia": {
+    "media": 674790.8,
+    "soma": 3373954,
+    "desvio_padrao": 38123.32
+  },
+  "Minas Gerais": {
+    "media": 1135808.0,
+    "soma": 5679040,
+    "desvio_padrao": 122487.18
+  },
+  "Espirito Santo": {
+    "media": 265625.8,
+    "soma": 1328129,
+    "desvio_padrao": 32346.05
+  },
+  "Rio de Janeiro": {
+    "media": 1158670.6,
+    "soma": 5793353,
+    "desvio_padrao": 195430.17
+  },
+  "Sao Paulo": {
+    "media": 3771746.4,
+    "soma": 18858732,
+    "desvio_padrao": 266949.31
+  },
+  "Parana": {
+    "media": 789599.6,
+    "soma": 3947998,
+    "desvio_padrao": 84705.76
+  },
+  "Santa Catarina": {
+    "media": 674211.6,
+    "soma": 3371058,
+    "desvio_padrao": 70794.53
+  },
+  "Rio Grande do Sul": {
+    "media": 919683.6,
+    "soma": 4598418,
+    "desvio_padrao": 32363.72
+  },
+  "Mato Grosso do Sul": {
+    "media": 211809.0,
+    "soma": 1059045,
+    "desvio_padrao": 16850.46
+  },
+  "Mato Grosso": {
+    "media": 286605.6,
+    "soma": 1433028,
+    "desvio_padrao": 28614.8
+  },
+  "Goias": {
+    "media": 497840.6,
+    "soma": 2489203,
+    "desvio_padrao": 60655.36
+  },
+  "Distrito Federal": {
+    "media": 201601.8,
+    "soma": 1008009,
+    "desvio_padrao": 6696.56
+  }
+}

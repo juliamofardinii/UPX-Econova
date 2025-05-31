@@ -147,6 +147,9 @@ def energia_hidreletrica():
 def energia_biomassa():
     return render_template('energia_biomassa.html', username=current_user.username if current_user.is_authenticated else None)
 
+@application.route('/energia_residencial')
+def energia_residencial():
+    return render_template('energia_residencial.html', username=current_user.username if current_user.is_authenticated else None)
 
 @application.route('/logout')
 def logout():

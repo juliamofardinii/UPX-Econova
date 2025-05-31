@@ -1,211 +1,281 @@
 <!DOCTYPE html>
 
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Econova</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="./static/index.css" />
+    <link rel="stylesheet" href="./static/header.css" />
+    <link rel="icon" type="image/png/golden_carrot.png" href="../static" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Econova</title>
-  <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css" />
-  <link rel="stylesheet" href="./static/index.css" />
-  <link rel="stylesheet" href="./static/header.css" />
-  <link rel="icon" type="image/png/golden_carrot.png" href="../static" />
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-</head>
+  <body>
+    <i class="bi bi-list menu-mobile"></i>
 
-<body>
-  <i class="bi bi-list menu-mobile"></i>
+    <header id="header">
+      <section class="profile">
+        <img src="../static/img/logo.png" alt="Logo Energia Renovável" />
+        <div class="profile-text">
+          <h2>Econova</h2>
+        </div>
 
-  <header id="header">
-    <section class="profile">
-      <img src="../static/img/logo.png" alt="Logo Energia Renovável" />
-      <div class="profile-text">
-        <h2>Econova</h2>
+        <nav class="nav-menu">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/"
+                ><i class="bi bi-house"></i> Início</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#transicao2"
+                ><i class="bi bi-person"></i> Sobre</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#transicao3"
+                ><i class="bi bi-envelope"></i> Contato</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/consumo"
+                ><i class="bi bi-lightning-fill"></i> Consumo de Energia
+                Geral</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/energia_residencial"
+                ><i class="bi bi-house"></i> Consumo Residencial</a
+              >
+            </li>
+
+            <!-- Dropdown de Fontes de Energia -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="dropdownFontes"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi bi-bar-chart"></i> Fontes de Energia
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownFontes">
+                <li>
+                  <a class="dropdown-item" href="/energia_solar"
+                    ><i class="bi bi-brightness-high"></i> Energia Solar</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/energia_eolica"
+                    ><i class="bi bi-wind"></i> Energia Eólica</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/energia_hidreletrica"
+                    ><i class="bi bi-droplet-half"></i> Energia Hidrelétrica</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/energia_biomassa"
+                    ><i class="bi bi-fire"></i> Energia Biomassa</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </section>
+
+      {% if username %}
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown()">
+          Bem vindo, {{ username }}!
+        </button>
+
+        <div class="dropdown-content" id="myDropdown">
+          <a href="/minha_conta">Minha Conta</a>
+          <a href="#" onclick="confirmLogout()">Logout</a>
+        </div>
       </div>
-    
+      {% else %}
       <nav class="nav-menu">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/"><i class="bi bi-house"></i> Início</a>
+            <div class="login-button">
+              <a href="/registro" class="btn-register btn-log-reg">Registrar</a>
+            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/#transicao2"><i class="bi bi-person"></i> Sobre</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/#transicao3"><i class="bi bi-envelope"></i> Contato</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/consumo"><i class="bi bi-lightning-fill"></i> Consumo de Energia Geral</a>
-          </li>
-    
-          <!-- Dropdown de Fontes de Energia -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdownFontes" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="bi bi-bar-chart"></i> Fontes de Energia
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownFontes">
-              <li><a class="dropdown-item" href="/energia_solar"><i class="bi bi-brightness-high"></i> Energia Solar</a></li>
-              <li><a class="dropdown-item" href="/energia_eolica"><i class="bi bi-wind"></i> Energia Eólica</a></li>
-              <li><a class="dropdown-item" href="/energia_hidreletrica"><i class="bi bi-droplet-half"></i> Energia Hidrelétrica</a></li>
-              <li><a class="dropdown-item" href="/energia_biomassa"><i class="bi bi-fire"></i> Energia Biomassa</a></li>
-            </ul>
+            <div class="login-button">
+              <a href="/login" class="btn-login btn-log-reg">Login</a>
+            </div>
           </li>
         </ul>
       </nav>
-    </section>    
+      {% endif %}
+    </header>
 
-    {% if username %}
-    <div class="dropdown">
-      <button class="dropbtn" onclick="toggleDropdown()">
-        Bem vindo, {{ username }}!
-      </button>
-
-      <div class="dropdown-content" id="myDropdown">
-        <a href="/minha_conta">Minha Conta</a>
-        <a href="#" onclick="confirmLogout()">Logout</a>
-      </div>
-    </div>
-    {% else %}
-    <nav class="nav-menu">
-      <ul class="nav">
-        <li class="nav-item">
-          <div class="login-button">
-            <a href="/registro" class="btn-register btn-log-reg">Registrar</a>
+    <main id="main">
+      <section id="inicio">
+        <div class="container">
+          <div class="inicio-content">
+            <h2>Energia Renovável no Brasil</h2>
+            <p>Explore o potencial energético limpo do Brasil</p>
+            <a style="--clr: #008037" class="btn-saiba-mais" href="#transicao2">
+              <span class="btn-saiba-mais__icon-wrapper">
+                <svg
+                  width="10"
+                  class="btn-saiba-mais__icon-svg"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 15"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                  ></path>
+                </svg>
+                <svg
+                  class="btn-saiba-mais__icon-svg btn-saiba-mais__icon-svg--copy"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="10"
+                  fill="none"
+                  viewBox="0 0 14 15"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                  ></path>
+                </svg>
+              </span>
+              Saiba mais
+            </a>
           </div>
-        </li>
-        <li class="nav-item">
-          <div class="login-button">
-            <a href="/login" class="btn-login btn-log-reg">Login</a>
+        </div>
+      </section>
+
+      <section id="transicao2">
+        <div class="divisao col-md-12"></div>
+      </section>
+
+      <section id="sobre" class="container mt-5">
+        <div class="row w-100 linha-sobre mx-auto">
+          <div class="col-md-12">
+            <h2 class="pt-3">Sobre o Panorama Energético</h2>
+            <p>
+              O Brasil possui uma das matrizes elétricas mais limpas do mundo,
+              com mais de 80% proveniente de fontes renováveis como
+              hidrelétricas, eólicas, solares e biomassa. Essa condição é
+              favorecida por sua extensão territorial, clima diversificado e
+              vasto potencial natural.
+            </p>
+            <p>
+              A energia solar fotovoltaica tem se expandido de forma acelerada
+              em regiões como Nordeste e Sudeste, enquanto a energia eólica
+              destaca-se no Rio Grande do Norte, Bahia e Ceará. A biomassa é
+              comumente utilizada no Centro-Oeste e Sudeste, impulsionada pelo
+              setor agroindustrial.
+            </p>
+            <p>
+              Nossa plataforma oferece acesso a estatísticas por estado,
+              evolução da capacidade instalada e níveis de geração distribuída.
+              Além disso, trazemos informações atualizadas da ANEEL, IBGE,
+              ABSOLAR, Atlas do Potencial Eólico Brasileiro, Atlas Brasileiro de
+              Energia Solar, e outras fontes para apoiar a tomada de decisões no
+              setor.
+            </p>
           </div>
-        </li>
-      </ul>
-    </nav>
-    {% endif %}
-  </header>
 
-  <main id="main">
-    <section id="inicio">
-      <div class="container">
-        <div class="inicio-content">
-          <h2>Energia Renovável no Brasil</h2>
-          <p>Explore o potencial energético limpo do Brasil</p>
-          <a style="--clr: #008037" class="btn-saiba-mais" href="#transicao2">
-            <span class="btn-saiba-mais__icon-wrapper">
-              <svg width="10" class="btn-saiba-mais__icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none"
-                viewBox="0 0 14 15">
-                <path fill="currentColor"
-                  d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z">
-                </path>
-              </svg>
-              <svg class="btn-saiba-mais__icon-svg  btn-saiba-mais__icon-svg--copy" xmlns="http://www.w3.org/2000/svg"
-                width="10" fill="none" viewBox="0 0 14 15">
-                <path fill="currentColor"
-                  d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z">
-                </path>
-              </svg>
-            </span>
-            Saiba mais
-          </a>
+          <div class="row mt-5 cards">
+            <div class="col-md-6 card-espaco">
+              <div class="card card-1 h-100 mb-3">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title text-center">
+                    Compromisso Sustentável
+                  </h5>
+                  <p class="card-text text-center">
+                    Nosso compromisso é fomentar a transição energética no
+                    Brasil, promovendo a conscientização sobre o uso de energias
+                    limpas e acessíveis para toda a população.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card card-1 h-100 mb-3">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title text-center">
+                    Informação e Transparência
+                  </h5>
+                  <p class="card-text text-center">
+                    Oferecemos um portal informativo e transparente para que
+                    cidadãos, empresas e gestores tenham acesso facilitado a
+                    dados energéticos renováveis confiáveis.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="transicao2">
-      <div class="divisao col-md-12"></div>
-    </section>
+      <section id="transicao3">
+        <div class="divisao col-md-12"></div>
+      </section>
 
-    <section id="sobre" class="container mt-5">
-      <div class="row w-100 linha-sobre mx-auto">
-        <div class="col-md-12">
-          <h2 class="pt-3">Sobre o Panorama Energético</h2>
-          <p>
-            O Brasil possui uma das matrizes elétricas mais limpas do mundo, com mais de 80% proveniente de fontes
-            renováveis como hidrelétricas, eólicas, solares e biomassa. Essa condição é favorecida por sua extensão
-            territorial, clima diversificado e vasto potencial natural.
-          </p>
-          <p>
-            A energia solar fotovoltaica tem se expandido de forma acelerada em regiões como Nordeste e Sudeste,
-            enquanto a energia eólica destaca-se no Rio Grande do Norte, Bahia e Ceará. A biomassa é comumente utilizada
-            no Centro-Oeste e Sudeste, impulsionada pelo setor agroindustrial.
-          </p>
-          <p>
-            Nossa plataforma oferece acesso a estatísticas por estado, evolução da capacidade
-            instalada e níveis de geração distribuída. Além disso, trazemos informações atualizadas da ANEEL, IBGE, ABSOLAR, 
-            Atlas do Potencial Eólico Brasileiro, Atlas Brasileiro de Energia Solar, e outras fontes para apoiar 
-            a tomada de decisões no setor.
-          </p>
-        </div>
-
-        <div class="row mt-5 cards">
-          <div class="col-md-6 card-espaco">
-            <div class="card card-1 h-100 mb-3">
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title text-center">Compromisso Sustentável</h5>
-                <p class="card-text text-center">
-                  Nosso compromisso é fomentar a transição energética no Brasil, promovendo a conscientização sobre o
-                  uso de energias limpas e acessíveis para toda a população.
+      <section id="contato" class="pt-5 pb-5">
+        <div class="container mb-5" data-anime="up">
+          <h2 class="pt-3 pb-3 text-center">Envie-nos um feedback</h2>
+          <div class="row">
+            <div class="col-md-6 mx-auto">
+              <div class="card p-4 shadow border-0 text-center">
+                <h5>Entre em contato pelo e-mail:</h5>
+                <p class="fs-6 mt-2 mb-0">
+                  <strong>upxeconova@gmail.com</strong>
                 </p>
               </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="card card-1 h-100 mb-3">
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title text-center">Informação e Transparência</h5>
-                <p class="card-text text-center">
-                  Oferecemos um portal informativo e transparente para que cidadãos, empresas e gestores tenham acesso
-                  facilitado a dados energéticos renováveis confiáveis.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
+      </section>
+
+      {% with messages = get_flashed_messages() %} {% if messages %} {% for
+      message in messages %}
+      <div
+        id="message-alert"
+        class="alert alert-success alert-dismissible fade show"
+        role="alert"
+      >
+        <i class="bi bi-patch-check"></i> {{ message }}
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
       </div>
-    </section>
+      {% endfor %} {% endif %} {% endwith %}
+    </main>
 
-    <section id="transicao3">
-      <div class="divisao col-md-12"></div>
-    </section>
-
-    <section id="contato" class="pt-5 pb-5">
-      <div class="container mb-5" data-anime="up">
-        <h2 class="pt-3 pb-3 text-center">Envie-nos um feedback</h2>
-        <div class="row">
-          <div class="col-md-6 mx-auto">
-            <div class="card p-4 shadow border-0 text-center">
-              <h5>Entre em contato pelo e-mail:</h5>
-              <p class="fs-6 mt-2 mb-0"><strong>upxeconova@gmail.com</strong></p>
-            </div>
-          </div>
-        </div>
+    <footer id="footer">
+      <div class="container-footer">
+        <div class="text-center">&copy; Copyright <strong>Econova</strong></div>
       </div>
-    </section>
-    
+    </footer>
 
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    {% for message in messages %}
-    <div id="message-alert" class="alert alert-success alert-dismissible fade show" role="alert">
-      <i class="bi bi-patch-check"></i> {{ message }}
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-    {% endfor %}
-    {% endif %}
-    {% endwith %}
-  </main>
-
-  <footer id="footer">
-    <div class="container-footer">
-      <div class="text-center">
-        &copy; Copyright <strong>Econova</strong>
-      </div>
-    </div>
-  </footer>
-
-  <script src="../static/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../static/script.js"></script>
-</body>
-
+    <script src="../static/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/script.js"></script>
+  </body>
 </html>
