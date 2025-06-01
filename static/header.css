@@ -111,7 +111,7 @@
 
 .dropbtn {
   border: none;
-  background-color: rgb(2, 62, 62);
+  background-color: #1a7574;
   border-radius: 4em;
   padding: 0.8em 1.2em 0.8em 1em;
   transition: all ease-in-out 0.2s;
@@ -129,7 +129,7 @@
 }
 
 .dropbtn:hover {
-  background-color: rgb(1, 50, 50);
+  background-color: #1a7574;
 }
 
 .dropdown-content {
@@ -264,8 +264,7 @@
   transition: background-color 0.3s ease;
 }
 
-#sidebar .nav-menu ul.nav li.nav-item a.nav-link:hover,
-#sidebar .nav-menu ul.nav li.nav-item a.nav-link.active {
+#sidebar .nav-menu ul.nav li.nav-item a.nav-link:hover {
   background-color: #1a7574;
   color: #fff;
 }
@@ -287,7 +286,7 @@
 }
 
 #sidebar .dropdown-menu a.dropdown-item:hover {
-  background-color: #004d1a;
+  background-color: #4ca3a2;
 }
 
 /* Botões de login e registro */

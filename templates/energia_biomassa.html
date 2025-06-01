@@ -1,246 +1,358 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Energia por Biomassa por Estado</title>
     <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" href="./static/index.css" />
     <link rel="stylesheet" href="./static/header.css" />
-    <link rel="icon" href="../static/img/logo.png" type="image/png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="../static/img/logo.png" type="image/png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <i class="bi bi-list menu-mobile"></i>
-    <header id="header">
-        <section class="profile">
-            <img src="../static/img/logo.png" alt="Logo Energia Renovável" />
-            <div class="profile-text">
-                <h2>Econova</h2>
-            </div>
+    <header id="sidebar">
+      <section class="profile">
+        <img src="../static/img/logo.png" alt="Logo Energia Renovável" />
+        <div class="profile-text">
+          <h2>Econova</h2>
+        </div>
+      </section>
 
-            <nav class="nav-menu">
-                <ul class="nav">
-                    <li class="nav-item"><a class="nav-link" href="/"><i class="bi bi-house"></i> Início</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/#transicao2"><i class="bi bi-person"></i> Sobre</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="/#transicao3"><i class="bi bi-envelope"></i>
-                            Contato</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/consumo"><i class="bi bi-lightning-fill"></i>
-                            Consumo de Energia Geral</a></li>
+      <nav class="nav-menu">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">
+              <i class="bi bi-house"></i> Início
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/">
+              <i class="bi bi-person"></i> Sobre
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/">
+              <i class="bi bi-envelope"></i> Contato
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/consumo">
+              <i class="bi bi-lightning-fill"></i> Consumo de Energia Geral
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/energia_residencial">
+              <i class="bi bi-plug"></i> Consumo Residencial
+            </a>
+          </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownFontes" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-bar-chart"></i> Fontes de Energia
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownFontes">
-                            <li><a class="dropdown-item" href="/energia_solar"><i class="bi bi-brightness-high"></i>
-                                    Energia Solar</a></li>
-                            <li><a class="dropdown-item" href="/energia_eolica"><i class="bi bi-wind"></i> Energia
-                                    Eólica</a></li>
-                            <li><a class="dropdown-item" href="/energia_hidreletrica"><i class="bi bi-droplet-half"></i>
-                                    Energia Hidrelétrica</a></li>
-                            <li><a class="dropdown-item" href="/energia_biomassa"><i class="bi bi-fire"></i> Energia
-                                    Biomassa</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </section>
+          <!-- Dropdown de Fontes de Energia -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="dropdownFontes"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="bi bi-bar-chart"></i> Fontes de Energia
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownFontes">
+              <li>
+                <a class="dropdown-item" href="/energia_solar"
+                  ><i class="bi bi-brightness-high"></i> Energia Solar</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="/energia_eolica"
+                  ><i class="bi bi-wind"></i> Energia Eólica</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="/energia_hidreletrica"
+                  ><i class="bi bi-droplet-half"></i> Energia Hidrelétrica</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="/energia_biomassa"
+                  ><i class="bi bi-fire"></i> Energia Biomassa</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
     </header>
 
-    <br><br><br><br>
+    <main id="main">
+      <section id="pesquisa">
+        <h2 class="mb-4 fw-bold">Energia por Biomassa por Estado</h2>
+        <div class="row justify-content-start mb-4">
+          <div class="col-md-6">
+            <label for="estadoBiomassa" class="form-label"
+              >Escolha um estado:</label
+            >
+            <select id="estadoBiomassa" class="form-select">
+              <option selected disabled>Selecione o estado</option>
+            </select>
+          </div>
+        </div>
 
-    <main id="main" class="container mt-5">
-        <section id="pesquisa">
-            <h2 class="text-center mb-4">Energia por Biomassa por Estado</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <label for="estadoBiomassa" class="form-label">Escolha um estado:</label>
-                    <select id="estadoBiomassa" class="form-select">
-                        <option selected disabled>Selecione o estado</option>
-                    </select>
-                </div>
+        <div
+          id="dadosBiomassa"
+          class="row justify-content-center text-center d-none"
+        >
+          <div class="col-md-6">
+            <div class="card shadow w-100 h-100">
+              <div class="card-body text-start">
+                <h5 class="card-title fw-semibold" id="tituloEstado">
+                  <!-- <i class="bi bi-geo-alt-fill me-2"></i> -->
+                </h5>
+                <p class="card-text" id="potencia">
+                  <i class="bi bi-lightning-charge-fill me-2"></i>
+                </p>
+                <p class="card-text" id="producao">
+                  <!-- <i class="bi bi-cash-coin me-2"></i> -->
+                </p>
+                <p class="card-text" id="usinas">
+                  <i class="bi bi-bar-chart-fill me-2"></i>
+                </p>
+                <p class="card-text" id="tipos">
+                  <!-- <i class="bi bi-building me-2"></i> -->
+                </p>
+              </div>
             </div>
+          </div>
 
-            <div id="dadosBiomassa" class="row justify-content-center text-center d-none">
-                <div class="col-md-6">
-                    <div class="card mt-4">
-                        <div class="card-body">
-                            <h5 class="card-title" id="tituloEstado"></h5>
-                            <p class="card-text" id="potencia"></p>
-                            <p class="card-text" id="producao"></p>
-                            <p class="card-text" id="usinas"></p>
-                            <p class="card-text" id="tipo"></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-8 mt-3">
-                    <div class="alert alert-secondary" role="alert">
-                        <strong>Legenda:</strong><br>
-                        <strong>Potência Instalada (MW):</strong> Capacidade de geração instalada para biomassa no
-                        estado.<br>
-                        <strong>Produção Anual (GWh):</strong> Quantidade de energia produzida anualmente com
-                        biomassa.<br>
-                        <strong>Usinas de Biomassa:</strong> Número de unidades produtoras em operação.<br>
-                        <strong>Tipo Principal:</strong> Fonte predominante de biomassa utilizada (cana, resíduos, etc).
-                    </div>
-                </div>
+      
+
+           <div class="col-md-6 text-start">
+            <div class="alert alert-info shadow-sm w-100 h-100">
+              <h6 class="fw-bold mb-2">Legenda:</h6>
+
+              <ul class="mb-0">
+                <li>
+                  <strong>Potência Instalada (MW):</strong>Capacidade de geração
+              instalada para biomassa no estado.
+                </li>
+                <li>
+                  <strong>Produção Anual (GWh):</strong>
+                Quantidade de energia
+              produzida anualmente com biomassa
+                </li>
+
+                <li>
+                  <strong>Usinas de Biomassa:</strong>
+                 Número de unidades produtoras
+              em operação.
+                </li>
+
+                <li>
+                  <strong>Tipo Principal:</strong>Fonte predominante de biomassa
+              utilizada (cana, resíduos, etc).
             </div>
-        </section>
+                </li>
+              </ul>
 
-        <br>
-        <section id="dashboard" class="mt-5">
-            <h3 class="text-center mb-4">Painel Comparativo Geral</h3>
-            <div class="row">
-                <div class="col-md-6">
-                    <canvas id="graficoPotencia"></canvas>
-                </div>
-                <div class="col-md-6">
-                    <canvas id="graficoProducao"></canvas>
-                </div>
             </div>
-        </section>
+        </div>
+      </section>
 
-        <br><br><br>
+  
+   <section id="dashboard" class="container mb-5">
+        <h3 class="mb-4 fw-bold">Painel Comparativo Geral</h3>
 
-        <figure style="text-align: center; margin-bottom: 2rem;">
-            <img src="../static/img/biomassa_foto.png" alt="Imagem Biomassa"
-                style="max-width: 70%; width: 400px; height: auto; border-radius: 8px;">
-            <figcaption style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
-                Fonte: <a
-                    href="https://blog.engecasscaldeiras.com.br/biomassa-os-principais-tipos-para-geracao-de-energia/"
-                    target="_blank" rel="noopener noreferrer">blog.engecasscaldeiras.com.br</a>
-            </figcaption>
-        </figure>
+      <div class="d-flex flex-column">
+          <div class="col-md-12 mb-4">
+            <h5 class="mb-2 text-start">Gráfico de Potência Instalada</h5>
+            <div class="card p-3 shadow align-items-center">
+            <canvas id="graficoPotencia" style="height: 200px; width: 100%"></canvas>
+             </div>
+          </div>
 
-        <section id="historia-biomassa" class="mt-5">
-            <h3 class="text-center mb-4">Sobre a Energia de Biomassa</h3>
-
-            <div class="row justify-content-center">
-                <div class="col-md-10">
-                    <h4>Origens e Evolução Global</h4>
-                    <p>
-                        A utilização da biomassa como fonte de energia remonta aos primórdios da humanidade, quando a
-                        queima da madeira era essencial para cocção, aquecimento e iluminação. Durante a Revolução
-                        Industrial, a biomassa, especialmente a lenha, desempenhou um papel crucial na indústria
-                        siderúrgica e nos transportes ferroviários. No entanto, com o advento dos combustíveis fósseis,
-                        seu uso foi gradualmente reduzido. A crise do petróleo na década de 1970 reacendeu o interesse
-                        por fontes de energia renováveis, incluindo a biomassa, levando a investimentos em tecnologias
-                        mais eficientes e sustentáveis.
-                    </p>
-                    <p>
-                        <strong>Fonte:</strong> <a href="https://blog.coontrol.com.br/uso-da-biomassa-no-brasil-e-no-mundo/"
-                            target="_blank">Coontrol Blog</a>
-                    </p>
-
-                    <br>
-                    <h4>Energia de Biomassa no Brasil: Passado e Presente</h4>
-                    <p>
-                        No Brasil, a biomassa sempre teve relevância na matriz energética, especialmente com o uso da
-                        lenha. Na década de 1970, o governo lançou o Programa Nacional do Álcool (Proálcool) para
-                        incentivar a produção de etanol a partir da cana-de-açúcar, reduzindo a dependência do petróleo.
-                        Atualmente, a biomassa representa cerca de 8,4% da matriz energética brasileira, com destaque
-                        para o bagaço da cana-de-açúcar como principal recurso. O país possui uma capacidade instalada
-                        significativa em usinas de biomassa, contribuindo para a diversificação e sustentabilidade da
-                        geração de energia.
-                    </p>
-                    <p>
-                        <strong>Fonte:</strong> <a href="https://pt.wikipedia.org/wiki/Energia_renov%C3%A1vel_no_Brasil"
-                            target="_blank">Wikipédia - Energia renovável no Brasil</a>
-                    </p>
-                </div>
+          <div class="col-md-12 mb-4">
+            <h5 class="mb-2 text-start">Gráfico Produção Anual</h5>
+            <div class="card p-3 shadow align-items-center">
+            <canvas id="graficoProducao" style="height: 200px; width: 100%"></canvas>
             </div>
-        </section>
-        <br>
+          </div>
+        </div>
+      </section>
 
+      <br /><br /><br />
+
+      <figure style="text-align: center; margin-bottom: 2rem">
+        <img
+          src="../static/img/biomassa_foto.png"
+          alt="Imagem Biomassa"
+          style="max-width: 70%; width: 400px; height: auto; border-radius: 8px"
+        />
+        <figcaption style="font-size: 0.9rem; color: #666; margin-top: 0.5rem">
+          Fonte:
+          <a
+            href="https://blog.engecasscaldeiras.com.br/biomassa-os-principais-tipos-para-geracao-de-energia/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >blog.engecasscaldeiras.com.br</a
+          >
+        </figcaption>
+      </figure>
+
+      <section id="historia-biomassa" class="mt-5">
+        <h3 class="text-center mb-4">Sobre a Energia de Biomassa</h3>
+
+        <div class="row justify-content-center">
+          <div class="col-md-10">
+            <h4>Origens e Evolução Global</h4>
+            <p>
+              A utilização da biomassa como fonte de energia remonta aos
+              primórdios da humanidade, quando a queima da madeira era essencial
+              para cocção, aquecimento e iluminação. Durante a Revolução
+              Industrial, a biomassa, especialmente a lenha, desempenhou um
+              papel crucial na indústria siderúrgica e nos transportes
+              ferroviários. No entanto, com o advento dos combustíveis fósseis,
+              seu uso foi gradualmente reduzido. A crise do petróleo na década
+              de 1970 reacendeu o interesse por fontes de energia renováveis,
+              incluindo a biomassa, levando a investimentos em tecnologias mais
+              eficientes e sustentáveis.
+            </p>
+            <p>
+              <strong>Fonte:</strong>
+              <a
+                href="https://blog.coontrol.com.br/uso-da-biomassa-no-brasil-e-no-mundo/"
+                target="_blank"
+                >Coontrol Blog</a
+              >
+            </p>
+
+            <br />
+            <h4>Energia de Biomassa no Brasil: Passado e Presente</h4>
+            <p>
+              No Brasil, a biomassa sempre teve relevância na matriz energética,
+              especialmente com o uso da lenha. Na década de 1970, o governo
+              lançou o Programa Nacional do Álcool (Proálcool) para incentivar a
+              produção de etanol a partir da cana-de-açúcar, reduzindo a
+              dependência do petróleo. Atualmente, a biomassa representa cerca
+              de 8,4% da matriz energética brasileira, com destaque para o
+              bagaço da cana-de-açúcar como principal recurso. O país possui uma
+              capacidade instalada significativa em usinas de biomassa,
+              contribuindo para a diversificação e sustentabilidade da geração
+              de energia.
+            </p>
+            <p>
+              <strong>Fonte:</strong>
+              <a
+                href="https://pt.wikipedia.org/wiki/Energia_renov%C3%A1vel_no_Brasil"
+                target="_blank"
+                >Wikipédia - Energia renovável no Brasil</a
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+      <br />
     </main>
 
-    <footer id="footer">
-        <div class="container-footer text-center mt-5">
-            &copy; Copyright <strong>Econova</strong>
-        </div>
-    </footer>
-
+   
     <script>
-        let biomassaData = [];
+      let biomassaData = [];
 
-        fetch('../static/data/energia_biomassa_estados.json')
-            .then(response => response.json())
-            .then(data => {
-                biomassaData = data;
-                const select = document.getElementById('estadoBiomassa');
-                data.forEach(item => {
-                    const opt = document.createElement('option');
-                    opt.value = item.estado;
-                    opt.textContent = item.estado;
-                    select.appendChild(opt);
-                });
+      fetch("../static/data/energia_biomassa_estados.json")
+        .then((response) => response.json())
+        .then((data) => {
+          biomassaData = data;
+          const select = document.getElementById("estadoBiomassa");
+          data.forEach((item) => {
+            const opt = document.createElement("option");
+            opt.value = item.estado;
+            opt.textContent = item.estado;
+            select.appendChild(opt);
+          });
 
-                const estados = data.map(d => d.estado);
-                const potencias = data.map(d => d.potencia_instalada_MW);
-                const producoes = data.map(d => d.producao_anual_GWh);
+          const estados = data.map((d) => d.estado);
+          const potencias = data.map((d) => d.potencia_instalada_MW);
+          const producoes = data.map((d) => d.producao_anual_GWh);
 
-                new Chart(document.getElementById('graficoPotencia'), {
-                    type: 'bar',
-                    data: {
-                        labels: estados,
-                        datasets: [{
-                            label: 'Potência Instalada (MW)',
-                            data: potencias,
-                            backgroundColor: 'rgba(0, 128, 0, 0.6)'
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        scales: {
-                            y: { beginAtZero: true }
-                        }
-                    }
-                });
+          new Chart(document.getElementById("graficoPotencia"), {
+            type: "bar",
+            data: {
+              labels: estados,
+              datasets: [
+                {
+                  label: "Potência Instalada (MW)",
+                  data: potencias,
+                  backgroundColor: "rgba(0, 128, 0, 0.6)",
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              scales: {
+                y: { beginAtZero: true },
+              },
+            },
+          });
 
-                new Chart(document.getElementById('graficoProducao'), {
-                    type: 'line',
-                    data: {
-                        labels: estados,
-                        datasets: [{
-                            label: 'Produção Anual (GWh)',
-                            data: producoes,
-                            borderColor: 'rgba(255, 159, 64, 1)',
-                            fill: false
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        scales: {
-                            y: { beginAtZero: true }
-                        }
-                    }
-                });
-            });
+          new Chart(document.getElementById("graficoProducao"), {
+            type: "line",
+            data: {
+              labels: estados,
+              datasets: [
+                {
+                  label: "Produção Anual (GWh)",
+                  data: producoes,
+                  borderColor: "rgba(255, 159, 64, 1)",
+                  fill: false,
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              scales: {
+                y: { beginAtZero: true },
+              },
+            },
+          });
+        });
 
-        document.getElementById('estadoBiomassa').addEventListener('change', function () {
-            const estadoSelecionado = this.value;
-            const info = biomassaData.find(e => e.estado === estadoSelecionado);
+      document
+        .getElementById("estadoBiomassa")
+        .addEventListener("change", function () {
+          const estadoSelecionado = this.value;
+          const info = biomassaData.find((e) => e.estado === estadoSelecionado);
 
-            if (info) {
-                document.getElementById('dadosBiomassa').classList.remove('d-none');
-                document.getElementById('tituloEstado').textContent = info.estado;
-                document.getElementById('potencia').textContent = `Potência Instalada: ${info.potencia_instalada_MW} MW`;
-                document.getElementById('producao').textContent = `Produção Anual: ${info.producao_anual_GWh} GWh`;
-                document.getElementById('usinas').textContent = `Usinas de Biomassa: ${info.usinas_biomassa}`;
-                document.getElementById('tipo').textContent = `Tipo Principal: ${info.tipo_principal}`;
-            }
+          if (info) {
+            document.getElementById("dadosBiomassa").classList.remove("d-none");
+            document.getElementById("tituloEstado").textContent = info.estado;
+            document.getElementById(
+              "potencia"
+            ).textContent = `Potência Instalada: ${info.potencia_instalada_MW} MW`;
+            document.getElementById(
+              "producao"
+            ).textContent = `Produção Anual: ${info.producao_anual_GWh} GWh`;
+            document.getElementById(
+              "usinas"
+            ).textContent = `Usinas de Biomassa: ${info.usinas_biomassa}`;
+            document.getElementById(
+              "tipo"
+            ).textContent = `Tipo Principal: ${info.tipo_principal}`;
+          }
         });
     </script>
 
     <script src="../static/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../static/script.js"></script>
-</body>
-
+  </body>
 </html>

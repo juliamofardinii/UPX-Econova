@@ -1,305 +1,387 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Energia Solar por Estado</title>
     <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" href="./static/index.css" />
     <link rel="stylesheet" href="./static/header.css" />
-    <link rel="icon" href="../static/img/logo.png" type="image/png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="../static/img/logo.png" type="image/png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <i class="bi bi-list menu-mobile"></i>
-    <header id="header">
-        <section class="profile">
-            <img src="../static/img/logo.png" alt="Logo Energia Renovável" />
-            <div class="profile-text">
-                <h2>Econova</h2>
-            </div>
-
-            <nav class="nav-menu">
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/"><i class="bi bi-house"></i> Início</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/#transicao2"><i class="bi bi-person"></i> Sobre</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/#transicao3"><i class="bi bi-envelope"></i> Contato</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/consumo"><i class="bi bi-lightning-fill"></i> Consumo de Energia
-                            Geral</a>
-                    </li>
-
-                    <!-- Dropdown de Fontes de Energia -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownFontes" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-bar-chart"></i> Fontes de Energia
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownFontes">
-                            <li><a class="dropdown-item" href="/energia_solar"><i class="bi bi-brightness-high"></i>
-                                    Energia Solar</a></li>
-                            <li><a class="dropdown-item" href="/energia_eolica"><i class="bi bi-wind"></i> Energia
-                                    Eólica</a></li>
-                            <li><a class="dropdown-item" href="/energia_hidreletrica"><i class="bi bi-droplet-half"></i>
-                                    Energia Hidrelétrica</a></li>
-                            <li><a class="dropdown-item" href="/energia_biomassa"><i class="bi bi-fire"></i> Energia
-                                    Biomassa</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </section>
-
-        {% if username %}
-        <div class="dropdown">
-            <button class="dropbtn" onclick="toggleDropdown()">
-                Bem vindo, {{ username }}!
-            </button>
-
-            <div class="dropdown-content" id="myDropdown">
-                <a href="/minha_conta">Minha Conta</a>
-                <a href="#" onclick="confirmLogout()">Logout</a>
-            </div>
+    <header id="sidebar">
+      <section class="profile">
+        <img src="../static/img/logo.png" alt="Logo Energia Renovável" />
+        <div class="profile-text">
+          <h2>Econova</h2>
         </div>
-        {% else %}
-        <nav class="nav-menu">
-            <ul class="nav">
-                <li class="nav-item">
-                    <div class="login-button">
-                        <a href="/registro" class="btn-register btn-log-reg">Registrar</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <div class="login-button">
-                        <a href="/login" class="btn-login btn-log-reg">Login</a>
-                    </div>
-                </li>
+      </section>
+
+      <nav class="nav-menu">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">
+              <i class="bi bi-house"></i> Início
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/">
+              <i class="bi bi-person"></i> Sobre
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/">
+              <i class="bi bi-envelope"></i> Contato
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/consumo">
+              <i class="bi bi-lightning-fill"></i> Consumo de Energia Geral
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/energia_residencial">
+              <i class="bi bi-plug"></i> Consumo Residencial
+            </a>
+          </li>
+
+          <!-- Dropdown de Fontes de Energia -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="dropdownFontes"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="bi bi-bar-chart"></i> Fontes de Energia
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownFontes">
+              <li>
+                <a class="dropdown-item" href="/energia_solar"
+                  ><i class="bi bi-brightness-high"></i> Energia Solar</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="/energia_eolica"
+                  ><i class="bi bi-wind"></i> Energia Eólica</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="/energia_hidreletrica"
+                  ><i class="bi bi-droplet-half"></i> Energia Hidrelétrica</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="/energia_biomassa"
+                  ><i class="bi bi-fire"></i> Energia Biomassa</a
+                >
+              </li>
             </ul>
-        </nav>
-        {% endif %}
+          </li>
+        </ul>
+      </nav>
     </header>
 
-    <br><br><br><br>
+    <main id="main">
+      <section id="pesquisa" class="container mb-5">
+        <h2 class="mb-4 fw-bold">Energia Solar por Estado</h2>
+        <div class="row justify-content-start mb-4">
+          <div class="col-md-6">
+            <label for="estadoSolar" class="form-label"
+              >Escolha um estado:</label
+            >
+            <select id="estadoSolar" class="form-select">
+              <option selected disabled>Selecione o estado</option>
+            </select>
+          </div>
+        </div>
 
-    <main id="main" class="container mt-5">
-        <section id="pesquisa">
-            <h2 class="text-center mb-4">Energia Solar por Estado</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <label for="estadoSolar" class="form-label">Escolha um estado:</label>
-                    <select id="estadoSolar" class="form-select">
-                        <option selected disabled>Selecione o estado</option>
-                    </select>
-                </div>
+        <!-- dois cards de cima -->
+        <div
+          id="dadosSolar"
+          class="row justify-content-center text-center d-none"
+        >
+          <div class="col-md-6">
+            <div class="card shadow w-100 h-100">
+              <div class="card-body text-start">
+                <h5 class="card-title fw-semibold" id="tituloEstado">
+                  <i class="bi bi-geo-alt-fill me-2"></i>
+                </h5>
+                <p class="card-text" id="potencia">
+                  <i class="bi bi-lightning-charge-fill me-2"></i>
+                </p>
+                <p class="card-text" id="investimento">
+                  <i class="bi bi-cash-coin me-2"></i>
+                </p>
+                <p class="card-text" id="potencial">
+                  <i class="bi bi-bar-chart-fill me-2"></i>
+                </p>
+                <p class="card-text" id="parques">
+                  <i class="bi bi-building me-2"></i>
+                </p>
+              </div>
             </div>
+          </div>
 
-            <div id="dadosSolar" class="row justify-content-center text-center d-none">
-                <div class="col-md-6">
-                    <div class="card mt-4">
-                        <div class="card-body">
-                            <h5 class="card-title" id="tituloEstado"></h5>
-                            <p class="card-text" id="potencia"></p>
-                            <p class="card-text" id="investimento"></p>
-                            <p class="card-text" id="potencial"></p>
-                            <p class="card-text" id="parques"></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-8 mt-3">
-                    <div class="alert alert-secondary" role="alert">
-                        <strong>Legenda:</strong><br>
-                        <strong>Potência Instalada (MW):</strong> Capacidade de geração já instalada em operação.<br>
-                        <strong>Investimento Estimado (R$ bilhões):</strong> Valor acumulado de investimentos no setor
-                        solar.<br>
-                        <strong>Potencial Solar Médio (kWh/m²/dia):</strong> Energia solar disponível por metro quadrado
-                        diariamente.<br>
-                        <strong>Parques Solares:</strong> Número de projetos solares em operação no estado.
-                    </div>
-                </div>
+          <div class="col-md-6 text-start">
+            <div class="alert alert-info shadow-sm w-100 h-100">
+              <h6 class="fw-bold mb-2">Legenda:</h6>
+              <ul class="mb-0">
+                <li>
+                  <strong>Potência Instalada (MW):</strong> Capacidade de
+                  geração já instalada em operação.
+                </li>
+                <li>
+                  <strong>Investimento Estimado (R$ bilhões):</strong> Valor
+                  acumulado de investimentos no setor solar.
+                </li>
+                <li>
+                  <strong>Potencial Solar Médio (kWh/m²/dia):</strong> Energia
+                  solar disponível por metro quadrado diariamente.
+                </li>
+                <li>
+                  <strong>Parques Solares:</strong> Número de projetos solares
+                  em operação no estado.
+                </li>
+              </ul>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <br>
-        <section id="dashboard" class="mt-5">
-            <h3 class="text-center mb-4">Painel Comparativo Geral</h3>
-            <div class="row">
-                <div class="col-md-6">
-                    <canvas id="graficoPotencia"></canvas>
-                </div>
-                <div class="col-md-6">
-                    <canvas id="graficoPotencial"></canvas>
-                </div>
+      <section id="dashboard" class="container mb-5">
+        <h3 class="mb-4 fw-bold">Painel Comparativo Geral</h3>
+
+        <div class="d-flex flex-column">
+          <div class="col-md-12 mb-4">
+            <h5 class="mb-2 text-start">Gráfico de Potência Instalada</h5>
+            <div class="card p-3 shadow align-items-center">
+              <canvas
+                id="graficoPotencia"
+                style="height: 200px; width: 100%"
+              ></canvas>
             </div>
-        </section>
+          </div>
 
-        <br><br><br>
-
-        <figure style="text-align: center; margin-bottom: 2rem;">
-            <img src="../static/img/solar_foto.png" alt="Imagem solar"
-                style="max-width: 70%; width: 400px; height: auto; border-radius: 8px;">
-            <figcaption style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
-                Fonte: <a href="https://solaritima.com.br/placa-de-energia-solar/" target="_blank"
-                    rel="noopener noreferrer">solaritima.com.br</a>
-            </figcaption>
-        </figure>
-
-        <section id="historia-solar" class="mt-5">
-            <h3 class="text-center mb-4">Sobre a Energia Solar</h3>
-
-            <div class="row justify-content-center">
-                <div class="col-md-10">
-                    <h4>Origens e Evolução Global</h4>
-                    <p>
-                        A utilização da energia solar remonta a séculos atrás, quando civilizações antigas empregavam a
-                        luz do sol para aquecer ambientes e secar alimentos. No entanto, a conversão direta da luz solar
-                        em eletricidade, conhecida como efeito fotovoltaico, foi descoberta em 1839 pelo físico francês
-                        Alexandre Edmond Becquerel. Essa descoberta marcou o início da exploração científica da energia
-                        solar como fonte de eletricidade.
-                    </p>
-                    <p>
-                        Em 1883, Charles Fritts desenvolveu a primeira célula solar funcional utilizando selênio
-                        revestido com uma fina camada de ouro. Embora sua eficiência fosse baixa, esse avanço foi
-                        fundamental para o desenvolvimento futuro da tecnologia solar. Em 1954, pesquisadores dos
-                        Laboratórios Bell nos Estados Unidos criaram a primeira célula solar de silício com eficiência
-                        suficiente para aplicações práticas, marcando o nascimento da energia solar moderna.
-                    </p>
-                    <p>
-                        A partir da década de 1970, a crise do petróleo impulsionou o interesse por fontes de energia
-                        alternativas, incluindo a solar. Desde então, avanços tecnológicos e reduções de custo têm
-                        promovido a expansão da energia solar em todo o mundo, tornando-a uma das principais fontes de
-                        energia renovável na atualidade.
-                    </p>
-                    <p>
-                        <strong>Fonte:</strong> <a href="https://www.portalsolar.com.br/historia-e-origem-da-energia-solar"
-                            target="_blank">Portal Solar</a>
-                    </p>
-
-                    <br>
-                    <h4>Energia Solar no Brasil: Passado e Presente</h4>
-                    <p>
-                        No Brasil, a energia solar começou a ganhar destaque a partir da década de 1990, com projetos
-                        pioneiros voltados para comunidades isoladas e áreas rurais sem acesso à rede elétrica
-                        convencional. Em 1997, foi instalado o primeiro sistema fotovoltaico do país, fruto de uma
-                        parceria entre instituições de pesquisa e universidades.
-                    </p>
-                    <p>
-                        Um marco importante ocorreu em 2012, com a publicação da Resolução Normativa nº 482 pela Agência
-                        Nacional de Energia Elétrica (ANEEL), que estabeleceu as regras para a micro e minigeração
-                        distribuída. Essa regulamentação permitiu que consumidores gerassem sua própria energia elétrica
-                        a partir de fontes renováveis, como a solar, e injetassem o excedente na rede de distribuição,
-                        recebendo créditos na conta de luz.
-                    </p>
-                    <p>
-                        Desde então, a energia solar no Brasil tem experimentado um crescimento exponencial. Em 2022, o
-                        país alcançou a marca de 21 GW de capacidade instalada em energia solar fotovoltaica,
-                        posicionando-se entre os líderes mundiais nesse segmento. Estados como Minas Gerais, São Paulo e
-                        Rio Grande do Sul destacam-se na geração distribuída, enquanto o Nordeste abriga grandes usinas
-                        solares centralizadas.
-                    </p>
-                    <p>
-                        <strong>Fonte:</strong> <a href="https://pt.wikipedia.org/wiki/Energia_solar_no_Brasil" target="_blank">Wikipédia
-                            - Energia solar no Brasil</a>
-                    </p>
-                </div>
+          <div class="col-md-12 mb-4">
+            <h5 class="mb-2 text-start">Gráfico de Potêncial Solar</h5>
+            <div class="card p-3 shadow align-items-center">
+              <canvas
+                id="graficoPotencial"
+                style="height: 200px; width: 100%"
+              ></canvas>
             </div>
-        </section>
-        <br>
+          </div>
+        </div>
+      </section>
+
+      <figure style="text-align: center; margin-bottom: 2rem">
+        <img
+          src="../static/img/solar_foto.png"
+          alt="Imagem solar"
+          style="max-width: 70%; width: 400px; height: auto; border-radius: 8px"
+        />
+        <figcaption style="font-size: 0.9rem; color: #666; margin-top: 0.5rem">
+          Fonte:
+          <a
+            href="https://solaritima.com.br/placa-de-energia-solar/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >solaritima.com.br</a
+          >
+        </figcaption>
+      </figure>
+
+      <section id="historia-solar" class="mt-5">
+        <h3 class="text-center mb-4">Sobre a Energia Solar</h3>
+
+        <div class="row justify-content-center">
+          <div class="col-md-10">
+            <h4>Origens e Evolução Global</h4>
+            <p>
+              A utilização da energia solar remonta a séculos atrás, quando
+              civilizações antigas empregavam a luz do sol para aquecer
+              ambientes e secar alimentos. No entanto, a conversão direta da luz
+              solar em eletricidade, conhecida como efeito fotovoltaico, foi
+              descoberta em 1839 pelo físico francês Alexandre Edmond Becquerel.
+              Essa descoberta marcou o início da exploração científica da
+              energia solar como fonte de eletricidade.
+            </p>
+            <p>
+              Em 1883, Charles Fritts desenvolveu a primeira célula solar
+              funcional utilizando selênio revestido com uma fina camada de
+              ouro. Embora sua eficiência fosse baixa, esse avanço foi
+              fundamental para o desenvolvimento futuro da tecnologia solar. Em
+              1954, pesquisadores dos Laboratórios Bell nos Estados Unidos
+              criaram a primeira célula solar de silício com eficiência
+              suficiente para aplicações práticas, marcando o nascimento da
+              energia solar moderna.
+            </p>
+            <p>
+              A partir da década de 1970, a crise do petróleo impulsionou o
+              interesse por fontes de energia alternativas, incluindo a solar.
+              Desde então, avanços tecnológicos e reduções de custo têm
+              promovido a expansão da energia solar em todo o mundo, tornando-a
+              uma das principais fontes de energia renovável na atualidade.
+            </p>
+            <p>
+              <strong>Fonte:</strong>
+              <a
+                href="https://www.portalsolar.com.br/historia-e-origem-da-energia-solar"
+                target="_blank"
+                >Portal Solar</a
+              >
+            </p>
+
+            <br />
+            <h4>Energia Solar no Brasil: Passado e Presente</h4>
+            <p>
+              No Brasil, a energia solar começou a ganhar destaque a partir da
+              década de 1990, com projetos pioneiros voltados para comunidades
+              isoladas e áreas rurais sem acesso à rede elétrica convencional.
+              Em 1997, foi instalado o primeiro sistema fotovoltaico do país,
+              fruto de uma parceria entre instituições de pesquisa e
+              universidades.
+            </p>
+            <p>
+              Um marco importante ocorreu em 2012, com a publicação da Resolução
+              Normativa nº 482 pela Agência Nacional de Energia Elétrica
+              (ANEEL), que estabeleceu as regras para a micro e minigeração
+              distribuída. Essa regulamentação permitiu que consumidores
+              gerassem sua própria energia elétrica a partir de fontes
+              renováveis, como a solar, e injetassem o excedente na rede de
+              distribuição, recebendo créditos na conta de luz.
+            </p>
+            <p>
+              Desde então, a energia solar no Brasil tem experimentado um
+              crescimento exponencial. Em 2022, o país alcançou a marca de 21 GW
+              de capacidade instalada em energia solar fotovoltaica,
+              posicionando-se entre os líderes mundiais nesse segmento. Estados
+              como Minas Gerais, São Paulo e Rio Grande do Sul destacam-se na
+              geração distribuída, enquanto o Nordeste abriga grandes usinas
+              solares centralizadas.
+            </p>
+            <p>
+              <strong>Fonte:</strong>
+              <a
+                href="https://pt.wikipedia.org/wiki/Energia_solar_no_Brasil"
+                target="_blank"
+                >Wikipédia - Energia solar no Brasil</a
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+      <br />
     </main>
 
-    <footer id="footer">
-        <div class="container-footer text-center mt-5">
-            &copy; Copyright <strong>Econova</strong>
-        </div>
-    </footer>
-
     <script>
-        let solarData = [];
+      let solarData = [];
 
-        fetch('../static/data/energia_solar.json')
-            .then(response => response.json())
-            .then(data => {
-                solarData = data;
-                const select = document.getElementById('estadoSolar');
-                data.forEach(item => {
-                    const opt = document.createElement('option');
-                    opt.value = item.estado;
-                    opt.textContent = item.estado;
-                    select.appendChild(opt);
-                });
+      fetch("../static/data/energia_solar.json")
+        .then((response) => response.json())
+        .then((data) => {
+          solarData = data;
+          const select = document.getElementById("estadoSolar");
+          data.forEach((item) => {
+            const opt = document.createElement("option");
+            opt.value = item.estado;
+            opt.textContent = item.estado;
+            select.appendChild(opt);
+          });
 
-                const estados = data.map(d => d.estado);
-                const potencias = data.map(d => d.potencia_instalada_MW);
-                const potenciaSol = data.map(d => parseFloat(d.potencial_kWh_m2_dia));
+          const estados = data.map((d) => d.estado);
+          const potencias = data.map((d) => d.potencia_instalada_MW);
+          const potenciaSol = data.map((d) =>
+            parseFloat(d.potencial_kWh_m2_dia)
+          );
 
-                new Chart(document.getElementById('graficoPotencia'), {
-                    type: 'bar',
-                    data: {
-                        labels: estados,
-                        datasets: [{
-                            label: 'Potência Instalada (MW)',
-                            data: potencias,
-                            backgroundColor: 'rgba(255, 193, 7, 0.6)'
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        scales: {
-                            y: {
-                                beginAtZero: true
-                            }
-                        }
-                    }
-                });
+          new Chart(document.getElementById("graficoPotencia"), {
+            type: "bar",
+            data: {
+              labels: estados,
+              datasets: [
+                {
+                  label: "Potência Instalada (MW)",
+                  data: potencias,
+                  backgroundColor: "rgba(255, 193, 7, 0.6)",
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              scales: {
+                y: {
+                  beginAtZero: true,
+                },
+              },
+            },
+          });
 
-                new Chart(document.getElementById('graficoPotencial'), {
-                    type: 'line',
-                    data: {
-                        labels: estados,
-                        datasets: [{
-                            label: 'Potencial Solar Médio (kWh/m²/dia)',
-                            data: potenciaSol,
-                            borderColor: 'rgba(255, 99, 132, 1)',
-                            fill: false
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        scales: {
-                            y: {
-                                beginAtZero: false
-                            }
-                        }
-                    }
-                });
-            });
+          new Chart(document.getElementById("graficoPotencial"), {
+            type: "line",
+            data: {
+              labels: estados,
+              datasets: [
+                {
+                  label: "Potencial Solar Médio (kWh/m²/dia)",
+                  data: potenciaSol,
+                  borderColor: "rgba(255, 99, 132, 1)",
+                  fill: false,
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              scales: {
+                y: {
+                  beginAtZero: false,
+                },
+              },
+            },
+          });
+        });
 
-        document.getElementById('estadoSolar').addEventListener('change', function () {
-            const estadoSelecionado = this.value;
-            const info = solarData.find(e => e.estado === estadoSelecionado);
+      document
+        .getElementById("estadoSolar")
+        .addEventListener("change", function () {
+          const estadoSelecionado = this.value;
+          const info = solarData.find((e) => e.estado === estadoSelecionado);
 
-            if (info) {
-                document.getElementById('dadosSolar').classList.remove('d-none');
-                document.getElementById('tituloEstado').textContent = info.estado;
-                document.getElementById('potencia').textContent = `Potência Instalada: ${info.potencia_instalada_MW} MW`;
-                document.getElementById('investimento').textContent = `Investimento estimado: R$ ${info.investimentos_GD_R$_bilhoes} bilhões`;
-                document.getElementById('potencial').textContent = `Potencial médio solar: ${info.potencial_kWh_m2_dia} kWh/m²/dia`;
-                document.getElementById('parques').textContent = `Número de parques solares: ${info.parques_solares}`;
-            }
+          if (info) {
+            document.getElementById("dadosSolar").classList.remove("d-none");
+            document.getElementById("tituloEstado").textContent = info.estado;
+            document.getElementById(
+              "potencia"
+            ).textContent = `Potência Instalada: ${info.potencia_instalada_MW} MW`;
+            document.getElementById(
+              "investimento"
+            ).textContent = `Investimento estimado: R$ ${info.investimentos_GD_R$_bilhoes} bilhões`;
+            document.getElementById(
+              "potencial"
+            ).textContent = `Potencial médio solar: ${info.potencial_kWh_m2_dia} kWh/m²/dia`;
+            document.getElementById(
+              "parques"
+            ).textContent = `Número de parques solares: ${info.parques_solares}`;
+          }
         });
     </script>
 
     <script src="../static/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../static/script.js"></script>
-</body>
-
+  </body>
 </html>
