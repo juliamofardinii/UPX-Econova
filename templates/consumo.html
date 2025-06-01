@@ -97,10 +97,10 @@
       </nav>
     </header>
 
-    <main id="main" class="pt-5">
+    <main id="main">
       <section id="pesquisa" class="container mb-5">
-        <h2 class="mb-4 fw-bold text-center">Consumo de Energia por Estado</h2>
-        <div class="row justify-content-center mb-4">
+        <h2 class="mb-4 fw-bold">Consumo de Energia por Estado</h2>
+        <div class="row justify-content-start mb-4">
           <div class="col-md-6">
             <label for="estado" class="form-label">Escolha um estado:</label>
             <select class="form-select shadow-sm" id="estado">
@@ -111,7 +111,7 @@
 
         <div class="row justify-content-center">
           <div class="col-md-6">
-            <div class="card shadow w-100">
+            <div class="card shadow w-100 h-100">
               <div class="card-body text-start">
                 <h5 class="card-title fw-semibold" id="estadoTitulo">Brasil</h5>
                 <p class="card-text" id="estadoMedia">
@@ -131,7 +131,7 @@
           </div>
 
           <div class="col-md-6">
-            <div class="alert alert-info shadow-sm w-100">
+            <div class="alert alert-info shadow-sm w-100 h-100">
               <h6 class="fw-bold mb-2">Legenda:</h6>
               <ul class="mb-0">
                 <li>
@@ -151,31 +151,30 @@
           </div>
         </div>
       </section>
-
       <section id="dashboard" class="container mb-5">
-        <h3 class="text-center mb-4 fw-bold">Painel Comparativo Geral</h3>
-        <div class="row justify-content-center">
-          <div class="col-md-10 mb-4">
+        <h3 class="mb-4 fw-bold">Painel Comparativo Geral</h3>
+        <div class="row">
+          <div class="col-md-12 mb-4">
+            <h5 class="mb-3 fw-semibold">Consumo Total por Estado</h5>
             <div class="card p-3 shadow">
-              <canvas id="graficoTotal"></canvas>
+              <canvas
+                id="graficoTotal"
+                style="height: 300px; width: 100%"
+              ></canvas>
             </div>
           </div>
-          <div class="col-md-10">
+          <div class="col-md-12">
+            <h5 class="mb-3 fw-semibold">Média de Consumo por Estado</h5>
             <div class="card p-3 shadow">
-              <canvas id="graficoMedia"></canvas>
+              <canvas
+                id="graficoMedia"
+                style="height: 300px; width: 100%"
+              ></canvas>
             </div>
           </div>
         </div>
       </section>
     </main>
-
-    <footer id="footer">
-      <div class="container-footer">
-        <div class="text-center">
-          &copy; 2025 Econova — Energia Renovável para Todos
-        </div>
-      </div>
-    </footer>
 
     <script>
       const estadosData = {};

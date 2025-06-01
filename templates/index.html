@@ -167,7 +167,9 @@
       <section id="sobre" class="container mt-5">
         <div class="row w-100 linha-sobre mx-auto">
           <div class="col-md-12">
-            <h2 class="pt-3">Sobre o Panorama Energético</h2>
+            <h2 class="pt-3" id="titulo-programa">
+              Sobre o Panorama Energético
+            </h2>
             <p>
               O Brasil possui uma das matrizes elétricas mais limpas do mundo,
               com mais de 80% proveniente de fontes renováveis como
@@ -194,12 +196,12 @@
 
           <div class="row mt-5 cards">
             <div class="col-md-6 card-espaco">
-              <div class="card card-1 h-100 mb-3">
+              <div class="card card-1 h-80" id="card-inicio">
                 <div class="card-body d-flex flex-column">
                   <h5 class="card-title text-center">
                     Compromisso Sustentável
                   </h5>
-                  <p class="card-text text-center">
+                  <p class="card-text text-center" id="text-card-inicio">
                     Nosso compromisso é fomentar a transição energética no
                     Brasil, promovendo a conscientização sobre o uso de energias
                     limpas e acessíveis para toda a população.
@@ -208,12 +210,12 @@
               </div>
             </div>
             <div class="col-md-6">
-              <div class="card card-1 h-100 mb-3">
+              <div class="card card-1 h-80" id="card-inicio">
                 <div class="card-body d-flex flex-column">
                   <h5 class="card-title text-center">
                     Informação e Transparência
                   </h5>
-                  <p class="card-text text-center">
+                  <p class="card-text text-center" id="text-card-inicio">
                     Oferecemos um portal informativo e transparente para que
                     cidadãos, empresas e gestores tenham acesso facilitado a
                     dados energéticos renováveis confiáveis.
@@ -231,10 +233,15 @@
 
       <section id="contato" class="pt-5 pb-5">
         <div class="container mb-5" data-anime="up">
-          <h2 class="pt-3 pb-3 text-center">Envie-nos um feedback</h2>
+          <h2 class="pt-3 pb-3 text-center" id="text-feedback">
+            Envie-nos um feedback
+          </h2>
           <div class="row">
             <div class="col-md-6 mx-auto">
-              <div class="card p-4 shadow border-0 text-center">
+              <div
+                class="card p-4 shadow border-0 text-center"
+                id="card-inicio"
+              >
                 <h5>Entre em contato pelo e-mail:</h5>
                 <p class="fs-6 mt-2 mb-0">
                   <strong>upxeconova@gmail.com</strong>
@@ -262,13 +269,13 @@
       </div>
       {% endfor %} {% endif %} {% endwith %}
     </main>
-    <footer id="footer">
+    <!-- <footer id="footer">
       <div class="container-footer">
         <div class="text-center">
           &copy; 2025 Econova — Energia Renovável para Todos
         </div>
       </div>
-    </footer>
+    </footer> -->
 
     <script src="../static/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../static/script.js"></script>

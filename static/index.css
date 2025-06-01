@@ -23,6 +23,12 @@
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
 
+#graficoTotal {
+  height: 200px !important;
+  max-height: 300px;
+  width: 100% !important;
+}
+
 #inicio {
   background: linear-gradient(to top, #85bbbb, #459e9d, #1a7574, #144e4d);
   display: flex;
@@ -46,12 +52,35 @@
 }
 
 .card {
-  background: #1a7574ff;
+  background: #fff;
   border: none;
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 20px;
-  color: white;
+  color: #333;
+  border: none;
+  border-radius: 16px;
+}
+
+#titulo-programa {
+  color: #333;
+}
+
+#card-inicio {
+  background: #1a7574;
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  color: #fff; /* cor branca para melhor contraste no fundo escuro */
+}
+
+#text-card-inicio {
+  color: #fff;
+}
+
+#text-feedback {
+  color: #333;
 }
 
 .card-title {
@@ -67,6 +96,7 @@
 .cards {
   margin-bottom: 40px;
   overflow: hidden;
+
   /* Adicionado */
 }
 
@@ -222,6 +252,10 @@ section#inicio-conta {
   height: 100vh;
 }
 
+h5 {
+  color: #333;
+  display: block;
+}
 section#inicio-conta h2 {
   font-size: 3.7rem;
 }
@@ -333,13 +367,6 @@ body {
 h2,
 h3 {
   color: #333;
-}
-
-/* Card principal */
-.card {
-  border: none;
-  border-radius: 16px;
-  background-color: #ffffff;
 }
 
 /* Sombras suaves */

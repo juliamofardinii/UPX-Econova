@@ -315,7 +315,7 @@ main#main,
 #footer {
   margin-left: 230px;
   /* largura da sidebar + espaçamento */
-  padding: 1rem;
+  padding: 2rem;
 }
 
 /* Dropdown do usuário na sidebar */
