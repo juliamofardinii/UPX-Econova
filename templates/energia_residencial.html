@@ -53,7 +53,6 @@
               >
             </li>
 
-            <!-- Dropdown de Fontes de Energia -->
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -159,14 +158,11 @@
         </div>
       </section>
 
-      <section id="dashboard" class="mt-5">
-        <h3 class="text-center mb-4">Painel Comparativo Geral</h3>
-        <div class="row">
+      <section id="dashboard" class="m-5">
+        <h3 class="text-center mb-4">Análise do Consumo por Ano</h3>
+        <div class="d-flex justify-content-center">
           <div class="col-md-6">
             <canvas id="graficoTotal"></canvas>
-          </div>
-          <div class="col-md-6">
-            <canvas id="graficoMedia"></canvas>
           </div>
         </div>
       </section>
@@ -185,8 +181,8 @@
         .then((response) => response.json())
         .then((data) => {
           Object.assign(estadosData, data);
-
           const select = document.getElementById("estado");
+
           Object.keys(data).forEach((estado) => {
             if (estado !== "TOTAL POR UF") {
               const option = document.createElement("option");
@@ -196,84 +192,98 @@
             }
           });
 
+          let graficoPorAno;
+
           function atualizarDados(estadoSelecionado) {
             const dados =
               estadoSelecionado === "BRASIL"
                 ? data["TOTAL POR UF"]
                 : data[estadoSelecionado];
+
             document.getElementById("estadoTitulo").textContent =
               estadoSelecionado === "BRASIL" ? "Brasil" : estadoSelecionado;
+
             document.getElementById(
               "estadoMedia"
-            ).textContent = `Média de consumo residencial: ${dados.media.toLocaleString(
+            ).textContent = `Média: ${dados.geral.media.toLocaleString(
               "pt-BR"
             )} kWh`;
             document.getElementById(
               "estadoSoma"
-            ).textContent = `Consumo total residencial: ${dados.soma.toLocaleString(
+            ).textContent = `Total: ${dados.geral.soma.toLocaleString(
               "pt-BR"
             )} kWh`;
             document.getElementById(
               "estadoDesvio"
-            ).textContent = `Desvio padrão: ${dados.desvio_padrao.toLocaleString(
-              "pt-BR"
-            )} kWh`;
+            ).textContent = `Desvio Padrão: ${
+              dados.geral.desvio_padrao !== null
+                ? dados.geral.desvio_padrao.toLocaleString("pt-BR") + " kWh"
+                : "N/A"
+            }`;
+
+            const anos = Object.keys(dados.por_ano);
+            const mediasPorAno = anos.map(
+              (ano) => dados.por_ano[ano].media || 0
+            );
+            const somaPorAno = anos.map((ano) => dados.por_ano[ano].soma || 0);
+
+            if (graficoPorAno) graficoPorAno.destroy();
+
+            const ctx = document
+              .getElementById("graficoTotal")
+              .getContext("2d");
+
+            graficoPorAno = new Chart(ctx, {
+              type: "bar",
+              data: {
+                labels: anos,
+                datasets: [
+                  {
+                    label: "Soma Consumo (kWh)",
+                    data: somaPorAno,
+                    backgroundColor: "rgba(54, 162, 235, 0.6)",
+                  },
+                  {
+                    label: "Média Consumo (kWh)",
+                    data: mediasPorAno,
+                    type: "line",
+                    borderColor: "rgba(255, 206, 86, 1)",
+                    fill: false,
+                    yAxisID: "y1",
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    position: "left",
+                    title: {
+                      display: true,
+                      text: "Soma (kWh)",
+                    },
+                  },
+                  y1: {
+                    beginAtZero: true,
+                    position: "right",
+                    grid: {
+                      drawOnChartArea: false,
+                    },
+                    title: {
+                      display: true,
+                      text: "Média (kWh)",
+                    },
+                  },
+                },
+              },
+            });
           }
 
-          // Inicializar com dados do Brasil
           atualizarDados("BRASIL");
 
           select.addEventListener("change", () => {
             atualizarDados(select.value);
-          });
-
-          const labels = Object.keys(data).filter((e) => e !== "TOTAL POR UF");
-          const totais = labels.map((e) => data[e].soma);
-          const medias = labels.map((e) => data[e].media);
-
-          new Chart(document.getElementById("graficoTotal"), {
-            type: "bar",
-            data: {
-              labels: labels,
-              datasets: [
-                {
-                  label: "Consumo Total Residencial (kWh)",
-                  data: totais,
-                  backgroundColor: "rgba(54, 162, 235, 0.6)",
-                },
-              ],
-            },
-            options: {
-              responsive: true,
-              scales: {
-                y: {
-                  beginAtZero: true,
-                },
-              },
-            },
-          });
-
-          new Chart(document.getElementById("graficoMedia"), {
-            type: "line",
-            data: {
-              labels: labels,
-              datasets: [
-                {
-                  label: "Média de Consumo Residencial (kWh)",
-                  data: medias,
-                  borderColor: "rgba(255, 206, 86, 1)",
-                  fill: false,
-                },
-              ],
-            },
-            options: {
-              responsive: true,
-              scales: {
-                y: {
-                  beginAtZero: false,
-                },
-              },
-            },
           });
         });
     </script>

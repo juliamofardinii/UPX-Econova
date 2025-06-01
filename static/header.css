@@ -1,169 +1,176 @@
 .profile {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .profile img {
-    width: 80px;
-    border: 4px solid #2b2c35;
-    border-radius: 50%;
-    margin-right: 10px;
+  width: 80px;
+  border: 4px solid #2b2c35;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
 .profile-text {
-    flex: 1;
+  flex: 1;
 }
 
 .profile-text h2 {
-    margin: 0;
-    font-size: 24px;
-    color: #fff;
+  margin: 0;
+  font-size: 24px;
+  color: #fff;
 }
 
 .dropdown-menu .dropdown-item:hover {
-  background-color: #1A7574; /* verde escuro */
-  color: #fff !important;    /* branco */
+  background-color: #1a7574; /* verde escuro */
+  color: #fff !important; /* branco */
 }
 
 #header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 80px;
-    background-color: #144e4d;
-    transition: background-color 0.3s ease;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 15px;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #144e4d;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
 
-  .profile {
-    display: flex;
-    align-items: center;
-  }
-  
-  .profile img {
-    width: 80px;
-    /* Redimensione conforme necessário */
-    border: 4px solid #2b2c35;
-    border-radius: 50%;
-    margin-right: 10px;
-    /* Margem à direita para separar o texto */
-  }
-  
-  .profile-text {
-    flex: 1;
-    /* Ocupar todo o espaço disponível */
-  }
-  
-  .profile-text h2 {
-    margin: 0;
-    font-size: 24px;
-    color: #fff;
-  }
-  
-  /* Adicionando estilo ao menu */
-  .nav-menu {
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-    /* Adicionando margem à direita para separar do botão de login */
-  }
-  
-  .nav-menu a,
-  .nav-menu a:focus {
-    color: #a8a9b4;
-    transition: 0.3s;
-    font-size: 15px;
-    text-decoration: none;
-  }
-  
-  .nav-menu a i,
-  .nav-menu a:focus i {
-    margin-right: 5px;
-    /* Adicionando margem à direita para separar do texto */
-  }
-  
-  .nav-menu a:hover,
-  .nav-menu .active,
-  .nav-menu .active-focus,
-  .nav-menu li:hover>a {
-    color: #fff;
-  }
-  
-  .nav-menu a:hover i,
-  .nav-menu .active i,
-  .nav-menu .active-focus i,
-  .nav-menu li:hover>a i {
-    color: #5f66a5;
-  }
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile img {
+  width: 80px;
+  /* Redimensione conforme necessário */
+  border: 4px solid #2b2c35;
+  border-radius: 50%;
+  margin-right: 10px;
+  /* Margem à direita para separar o texto */
+}
+
+.profile-text {
+  flex: 1;
+  /* Ocupar todo o espaço disponível */
+}
+
+.profile-text h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #fff;
+}
+
+/* Adicionando estilo ao menu */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  /* Adicionando margem à direita para separar do botão de login */
+}
+
+.nav-menu a,
+.nav-menu a:focus {
+  color: #a8a9b4;
+  transition: 0.3s;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.nav-menu a i,
+.nav-menu a:focus i {
+  margin-right: 5px;
+  /* Adicionando margem à direita para separar do texto */
+}
+
+.nav-menu a:hover,
+.nav-menu .active,
+.nav-menu .active-focus,
+.nav-menu li:hover > a {
+  color: #fff;
+}
+
+.nav-menu a:hover i,
+.nav-menu .active i,
+.nav-menu .active-focus i,
+.nav-menu li:hover > a i {
+  color: #5f66a5;
+}
 
 .dropdown {
-    position: relative;
-    display: inline-block;
-    color: #fff;
-    font-size: 1.2rem;
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  font-size: 1.2rem;
 }
 
 .dropbtn {
-    border: none;
-    background-color: rgb(2, 62, 62);
-    border-radius: 4em;
-    padding: 0.8em 1.2em 0.8em 1em;
-    transition: all ease-in-out 0.2s;
-    cursor: pointer;
-    padding: 16px;
-    font-size: 16px;
-    color: #fff;
-  }
-  
-  .dropbtn span {
-    justify-content: space-between;
-    align-items: center;
-    color: #fff;
-    font-weight: 600;
-  }
-  
-  .dropbtn:hover {
-    background-color: rgb(1, 50, 50);
-  }
+  border: none;
+  background-color: rgb(2, 62, 62);
+  border-radius: 4em;
+  padding: 0.8em 1.2em 0.8em 1em;
+  transition: all ease-in-out 0.2s;
+  cursor: pointer;
+  padding: 16px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.dropbtn span {
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  font-weight: 600;
+}
+
+.dropbtn:hover {
+  background-color: rgb(1, 50, 50);
+}
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    right: 0;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 0;
 }
 
 /* Mostra o menu suspenso quando o botão é clicado */
 .dropdown-content.show {
-    display: block;
-  }
+  display: block;
+}
 
 .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1;
+  background-color: #f1f1f1;
 }
 
 .show {
-    display: block;
+  display: block;
 }
 
 .btn-log-reg {
-  --border-color: linear-gradient(-45deg, #B2E0DF, #4CA3A2, #1A7574, #144A49, #0F2C2C);
+  --border-color: linear-gradient(
+    -45deg,
+    #b2e0df,
+    #4ca3a2,
+    #1a7574,
+    #144a49,
+    #0f2c2c
+  );
   --border-width: 0.125em;
   --curve-size: 0.5em;
   --blur: 30px;
@@ -181,12 +188,13 @@
   text-transform: uppercase;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
   clip-path: polygon(
-          0% var(--curve-size),
-          var(--curve-size) 0,
-          100% 0,
-          100% calc(100% - var(--curve-size)),
-          calc(100% - var(--curve-size)) 100%,
-          0 100%);
+    0% var(--curve-size),
+    var(--curve-size) 0,
+    100% 0,
+    100% calc(100% - var(--curve-size)),
+    calc(100% - var(--curve-size)) 100%,
+    0 100%
+  );
   transition: color 250ms;
 }
 
@@ -203,18 +211,150 @@
   animation: move-bg7234 5s ease infinite;
   z-index: -2;
 }
+/* Sidebar container */
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh; /* altura total da viewport */
+  width: 220px;
+  background-color: #008037; /* cor exemplo, ajuste como quiser */
+  color: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+/* Perfil no topo da sidebar */
+#sidebar .profile {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#sidebar .profile img {
+  max-width: 100px;
+  margin-bottom: 0.5rem;
+  border-radius: 50%;
+}
+
+/* Nav vertical */
+#sidebar .nav-menu ul.nav {
+  padding-left: 0;
+  list-style: none;
+}
+
+#sidebar .nav-menu ul.nav li.nav-item {
+  margin-bottom: 0.8rem;
+}
+
+#sidebar .nav-menu ul.nav li.nav-item a.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+#sidebar .nav-menu ul.nav li.nav-item a.nav-link:hover,
+#sidebar .nav-menu ul.nav li.nav-item a.nav-link.active {
+  background-color: #005824;
+  color: #fff;
+}
+
+/* Dropdown menu no sidebar */
+#sidebar .dropdown-menu {
+  background-color: #006633;
+  border: none;
+  margin-left: 1.5rem;
+}
+
+#sidebar .dropdown-menu a.dropdown-item {
+  color: white;
+}
+
+#sidebar .dropdown-menu a.dropdown-item:hover {
+  background-color: #004d1a;
+}
+
+/* Botões de login e registro */
+#sidebar .login-menu a.btn-register,
+#sidebar .login-menu a.btn-login {
+  display: block;
+  background: #00b050;
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+#sidebar .login-menu a.btn-register:hover,
+#sidebar .login-menu a.btn-login:hover {
+  background-color: #007f36;
+}
+
+/* Ajustar o conteúdo principal para não ficar atrás da sidebar */
+main#main {
+  margin-left: 240px; /* largura da sidebar + espaçamento */
+  padding: 1rem;
+}
+
+/* Dropdown do usuário na sidebar */
+.user-dropdown {
+  margin-top: auto; /* empurra para o final da sidebar */
+  text-align: center;
+}
+
+.user-dropdown .dropbtn {
+  background-color: #007f36;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.user-dropdown .dropdown-content {
+  display: none;
+  position: relative;
+  background-color: #004d1a;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+}
+
+.user-dropdown .dropdown-content a {
+  color: white;
+  display: block;
+  padding: 0.5rem 0;
+  text-decoration: none;
+}
+
+.user-dropdown .dropdown-content a:hover {
+  background-color: #00330d;
+}
 
 @keyframes move-bg7234 {
   0% {
-      background-position: 31% 0%;
+    background-position: 31% 0%;
   }
 
   50% {
-      background-position: 70% 100%;
+    background-position: 70% 100%;
   }
 
   100% {
-      background-position: 31% 0%;
+    background-position: 31% 0%;
   }
 }
 
@@ -222,23 +362,31 @@
   background: var(--bg);
   z-index: -1;
   clip-path: polygon(
-          var(--border-width) calc(var(--curve-size) + var(--border-width) * 0.5),
-          calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
-          calc(100% - var(--border-width)) var(--border-width),
-          calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
-          calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)),
-          var(--border-width) calc(100% - var(--border-width)));
+    var(--border-width) calc(var(--curve-size) + var(--border-width) * 0.5),
+    calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
+    calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width)),
+    var(--border-width) calc(100% - var(--border-width))
+  );
   transition: clip-path 500ms;
 }
 
 .btn-log-reg:where(:hover, :focus)::after {
   clip-path: polygon(
-          calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
-          calc(100% - var(--border-width)) var(--border-width),
-          calc(100% - var(--border-width)) var(--border-width),
-          calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
-          calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)),
-          calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)));
+    calc(100% - var(--border-width))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width)),
+    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width))
+  );
   transition: 200ms;
 }
 
@@ -246,7 +394,6 @@
   color: #fff;
 }
 
-
 .btn-register {
-    margin-right: 20px;
+  margin-right: 20px;
 }
