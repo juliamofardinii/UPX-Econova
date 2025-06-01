@@ -16,7 +16,7 @@
 
 .profile-text h2 {
   margin: 0;
-  font-size: 24px;
+  font-size: 20px;
   color: #fff;
 }
 
@@ -218,13 +218,16 @@
   left: 0;
   height: 100vh; /* altura total da viewport */
   width: 220px;
-  background-color: #008037; /* cor exemplo, ajuste como quiser */
+  background-color: #144e4d; /* cor exemplo, ajuste como quiser */
   color: white;
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   z-index: 1000;
+}
+#sidebar .nav-menu ul.nav li.nav-item a.nav-link {
+  font-size: 14px; /* ou 15px, 16px... conforme seu gosto */
 }
 
 /* Perfil no topo da sidebar */
@@ -234,7 +237,7 @@
 }
 
 #sidebar .profile img {
-  max-width: 100px;
+  max-width: 65px;
   margin-bottom: 0.5rem;
   border-radius: 50%;
 }
@@ -263,13 +266,18 @@
 
 #sidebar .nav-menu ul.nav li.nav-item a.nav-link:hover,
 #sidebar .nav-menu ul.nav li.nav-item a.nav-link.active {
-  background-color: #005824;
+  background-color: #1a7574;
+  color: #fff;
+}
+
+#sidebar .nav-menu ul.nav li.nav-item a.nav-link:hover i,
+#sidebar .nav-menu ul.nav li.nav-item a.nav-link.active i {
   color: #fff;
 }
 
 /* Dropdown menu no sidebar */
 #sidebar .dropdown-menu {
-  background-color: #006633;
+  background-color: #1a7574;
   border: none;
   margin-left: 1.5rem;
 }
@@ -299,12 +307,12 @@
 
 #sidebar .login-menu a.btn-register:hover,
 #sidebar .login-menu a.btn-login:hover {
-  background-color: #007f36;
+  background-color: #1a7574;
 }
 
 /* Ajustar o conteúdo principal para não ficar atrás da sidebar */
 main#main {
-  margin-left: 240px; /* largura da sidebar + espaçamento */
+  margin-left: 220px; /* largura da sidebar + espaçamento */
   padding: 1rem;
 }
 
@@ -315,7 +323,7 @@ main#main {
 }
 
 .user-dropdown .dropbtn {
-  background-color: #007f36;
+  background-color: #1a7574;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -328,7 +336,7 @@ main#main {
 .user-dropdown .dropdown-content {
   display: none;
   position: relative;
-  background-color: #004d1a;
+  background-color: #1a7574;
   margin-top: 0.5rem;
   border-radius: 4px;
 }
@@ -341,7 +349,7 @@ main#main {
 }
 
 .user-dropdown .dropdown-content a:hover {
-  background-color: #00330d;
+  background-color: #1a7574;
 }
 
 @keyframes move-bg7234 {

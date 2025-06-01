@@ -24,9 +24,7 @@
 }
 
 #inicio {
-  height: 100vh;
-  background: linear-gradient(to top, #85bbbb, #459e9d, #1A7574, #144e4d);
-  /* Gradiente de cores */
+  background: linear-gradient(to top, #85bbbb, #459e9d, #1a7574, #144e4d);
   display: flex;
   align-items: center;
 }
@@ -105,13 +103,17 @@
   padding-top: 3%;
 }
 
-#transicao1, #transicao2, #transicao3 {
+#transicao1,
+#transicao2,
+#transicao3 {
   height: 30px;
   background-color: #cee4ec;
   transition: height 0.3s ease;
 }
 
-#transicao1, #transicao2, #transicao3 {
+#transicao1,
+#transicao2,
+#transicao3 {
   border-bottom: 1px solid #cee4ec;
 }
 
@@ -136,7 +138,7 @@ section#inicio {
   background-attachment: fixed;
   background-position: center;
   width: 100%;
-  height: 100vh;
+  height: 70vh;
 }
 
 section#inicio h2 {
@@ -246,7 +248,7 @@ section#inicio-conta div#arraste a {
 
 *::-webkit-scrollbar-track {
   width: 12px;
-  box-shadow: inset 0 0 .3rem #00000050;
+  box-shadow: inset 0 0 0.3rem #00000050;
   background-color: #fff;
 }
 
@@ -308,7 +310,6 @@ section#inicio-conta div#arraste a {
   background-color: rgb(169, 210, 210);
 }
 
-
 #message-alert {
   position: fixed;
   z-index: 10;
@@ -359,17 +360,17 @@ body {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: .75rem;
+  gap: 0.75rem;
   background-color: rgb(2, 62, 62);
   color: #fff;
   border-radius: 10rem;
   font-weight: 600;
-  padding: .75rem 1.5rem;
+  padding: 0.75rem 1.5rem;
   padding-left: 20px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: background-color .3s;
+  transition: background-color 0.3s;
 }
 
 .btn-saiba-mais__icon-wrapper {
@@ -399,13 +400,11 @@ body {
 }
 
 .btn-saiba-mais:hover .btn-saiba-mais__icon-svg:first-child {
-  transition: transform .3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
   transform: translate(150%, -150%);
 }
 
 .btn-saiba-mais:hover .btn-saiba-mais__icon-svg--copy {
-  transition: transform .3s ease-in-out .1s;
+  transition: transform 0.3s ease-in-out 0.1s;
   transform: translate(0);
 }
-
-
