@@ -311,8 +311,10 @@
 }
 
 /* Ajustar o conteúdo principal para não ficar atrás da sidebar */
-main#main {
-  margin-left: 220px; /* largura da sidebar + espaçamento */
+main#main,
+#footer {
+  margin-left: 230px;
+  /* largura da sidebar + espaçamento */
   padding: 1rem;
 }
 
